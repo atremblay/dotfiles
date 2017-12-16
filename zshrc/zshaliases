@@ -1,0 +1,19 @@
+
+#shell
+alias grep='grep -r -n --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias ll='ls -l'
+
+#git
+alias gf='git fetch'
+alias grb='git rebase'
+alias gsu='git submodule update'
+
+#docker
+alias drm='docker rm BatContainer'
+alias drmi='for i in `docker images --no-trunc | grep atremblay | awk '{print $3}'`; do docker rmi $i; done;'
+alias dbld='nice make -j16 -k docker_mldb DOCKER_ALLOW_DIRTY=1'
+alias dall='drm;dbld;drun'
+
+alias pip='noglob pip'

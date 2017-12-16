@@ -1,0 +1,118 @@
+""""Vundle
+
+set nocompatible              " required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Allow backspace to work like other programs
+set backspace=indent,eol,start
+
+" settings
+set splitright
+set splitbelow
+set encoding=utf8
+scriptencoding utf-8
+set nu
+
+" split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Fold  SPACE
+Plugin 'tmhedberg/SimpylFold'
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+let g:SimpylFold_docstring_preview=1
+
+" auto-complete ctrl-c
+Plugin 'davidhalter/jedi-vim'
+let g:jedi#completions_command = "<C-c>"
+let g:jedi#use_splits_not_buffers = "left"
+let g:jedi#popup_on_dot = 1
+
+
+" indentation
+Plugin 'vim-scripts/indentpython.vim'
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set autoindent |
+    \ set expandtab |
+    \ set fileformat=unix
+
+highlight BadWhitespace ctermbg=red guibg=darkred
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+"syntax 
+"let python_highlight_all=1
+syntax on
+
+"color
+set t_Co=256
+set t_ut=
+
+Plugin 'marcopaganini/termschool-vim-theme'
+colorscheme termschool
+"Plugin 'arcticicestudio/nord-vim'
+"colorscheme nord
+"Plugin 'tomasiser/vim-code-dark'
+"colorscheme codedark
+
+"powerline
+"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+"let g:airline_theme='bubblegum'
+let g:airline_theme='deus'
+set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
+let g:airline#extensions#tabline#switch_buffers_and_tabs = 0
+
+
+"directory tree <F2>
+Plugin 'scrooloose/nerdtree'
+map <F2> :NERDTreeToggle<CR>
+let g:NERDTreeWinPos = "right"
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd vimenter * NERDTree
+set laststatus=2
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+	 exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+	  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+  endfunction
+
+  call NERDTreeHighlightFile('py', 'cyan', 'none', 'cyan', '#151515')
+
+" Super searching
+Plugin 'kien/ctrlp.vim'
+
+" Line comments
+Plugin 'scrooloose/nerdcommenter'
