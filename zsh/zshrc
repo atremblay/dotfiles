@@ -5,6 +5,10 @@ source $HOME/.zshaliases
 # Terminal supports 256 colors
 export TERM="xterm-256color"
 
+# Use neovim as default editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
