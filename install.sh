@@ -6,6 +6,7 @@ if [ -e $HOME/.vimrc ]; then
 fi
 ln -s $HOME/dotfiles/vim/vimrc $HOME/.vimrc
 
+mkdir -p $HOME/.config/nvim/
 if [ -e $HOME/.config/nvim/init.vim ]; then
     echo "Moving old \$HOME/.config/nvim/init.vim to \$HOME/.config/nvim/init.vim.old"
     mv $HOME/.config/nvim/init.vim $HOME/.config/nvim/init.vim.old
