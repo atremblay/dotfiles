@@ -1,9 +1,3 @@
-" File              : init.vim
-" Author            : Alexis Tremblay <atremblay@explorance.com>
-" Date              : 26.04.2019
-" Last Modified Date: 29.04.2019
-" Last Modified By  : Alexis Tremblay <atremblay@explorance.com>
-
 
 call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -54,14 +48,14 @@ set termguicolors
 "endif
 
 "let ayucolor="dark"
-"let ayucolor="mirage"
-"colorscheme ayu
+let ayucolor="mirage"
+colorscheme ayu
 syntax enable
 "colorscheme OceanicNext
 let g:nord_cursor_line_number_background = 1
 let g:nord_italic_comments = 1
-colorscheme nord
-let g:airline_theme='nord'
+"colorscheme nord
+let g:airline_theme='ayu'
 
 " split navigation
 nnoremap <C-J> <C-W><C-J>
@@ -119,7 +113,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 " Remove trailing white space in python files
 autocmd BufWritePre *.py :%s/\s\+$//e
-let g:python3_host_prog = '/home/alexis/miniconda3/envs/neovim/bin/python'
+let g:python3_host_prog = '~/miniconda3/envs/neovim/bin/python'
 
 "let g:UltiSnipsUsePythonVersion = 3
 
