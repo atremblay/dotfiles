@@ -1,16 +1,21 @@
+" File              : init.vim
+" Author            : Alexis Tremblay <atremblay@explorance.com>
+" Date              : 26.04.2019
+" Last Modified Date: 29.04.2019
+" Last Modified By  : Alexis Tremblay <atremblay@explorance.com>
 
 call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'roxma/nvim-completion-manager'
+"Plug 'ncm2/ncm2'
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+"Plug 'honza/vim-snippets'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'kien/ctrlp.vim'
+"Plug 'kien/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Plug 'alpertuna/vim-header'
@@ -34,14 +39,28 @@ Plug 'neomake/neomake'
 
 " Utils
 Plug 'tpope/vim-surround'
-"Plug 'Shougo/neosnippet.vim'
-"Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 Plug 'ryanoasis/vim-devicons'
+
+" Multicursor like sublime text
 Plug 'terryma/vim-multiple-cursors'
+
+" Fuzzy search
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Linting
+Plug 'w0rp/ale'
 call plug#end()
 
 " Let deoplete jedi do the completion
 let g:jedi#completions_enabled = 0
+let g:deoplete#sources#jedi#show_docstring = 1
+let g:deoplete#auto_complete=1
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 100
+
 
 "if (has("termguicolors"))
 set termguicolors
@@ -56,6 +75,7 @@ let g:nord_cursor_line_number_background = 1
 let g:nord_italic_comments = 1
 "colorscheme nord
 let g:airline_theme='ayu'
+"let g:airline_theme='nord'
 
 " split navigation
 nnoremap <C-J> <C-W><C-J>
@@ -67,10 +87,6 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <A-Left> :tabprevious<CR>                                                                            
 nnoremap <A-Right> :tabnext<CR>
 
-let g:deoplete#auto_complete=1
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 100
-
 " Indentation
 set autoindent
 set smartindent
@@ -79,6 +95,10 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set smarttab
+
+" Case sensitive search if there are any uppercase
+" Case insensitive if search term is all lower case
+set smartcase
 
 " number in gutter
 set nu
@@ -102,8 +122,8 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set wrapmargin=79 |
-    "\ set textwidth=79 |
+    "\ set wrapmargin=79 |
+    \ set textwidth=0 |
     \ set autoindent |
     \ set expandtab |
     \ set fileformat=unix
@@ -113,7 +133,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 " Remove trailing white space in python files
 autocmd BufWritePre *.py :%s/\s\+$//e
-let g:python3_host_prog = '~/miniconda3/envs/neovim/bin/python'
+let g:python3_host_prog = expand("$HOME/miniconda3/envs/neovim/bin/python")
 
 "let g:UltiSnipsUsePythonVersion = 3
 
@@ -132,3 +152,7 @@ map <F4> :AddHeader<CR>
 " stop highlighting search
 set nohlsearch
 
+"let g:jedi#max_doc_height = 75
+
+nnoremap <C-p> :<C-u>FZF<CR>
+nnoremap <C-b> :Buffers<CR>
