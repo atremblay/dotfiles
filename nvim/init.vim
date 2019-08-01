@@ -8,7 +8,7 @@ call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'ncm2/ncm2'
 Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
 Plug 'roxma/nvim-yarp'
@@ -39,8 +39,8 @@ Plug 'neomake/neomake'
 
 " Utils
 Plug 'tpope/vim-surround'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+"Plug 'Shougo/neosnippet.vim'
+"Plug 'Shougo/neosnippet-snippets'
 Plug 'ryanoasis/vim-devicons'
 
 " Multicursor like sublime text
@@ -61,6 +61,11 @@ let g:deoplete#auto_complete=1
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 100
 
+
+imap jk <Esc>
+imap kj <Esc>
+nmap <S-w> :w <CR>
+imap <S-w> <Esc>:w <CR>
 
 "if (has("termguicolors"))
 set termguicolors
@@ -156,3 +161,10 @@ set nohlsearch
 
 nnoremap <C-p> :<C-u>FZF<CR>
 nnoremap <C-b> :Buffers<CR>
+
+
+let g:UltiSnipsExpandTrigger="<tab>"
+
+let g:ale_linters = {'python': ['pylint']}
+let g:ale_fix_on_save = 0
+let g:ale_lint_on_save = 1
