@@ -39,10 +39,9 @@ Plug 'neomake/neomake'
 
 " Utils
 Plug 'tpope/vim-surround'
-"Plug 'Shougo/neosnippet.vim'
-"Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 Plug 'ryanoasis/vim-devicons'
-Plug 'sirver/ultisnips'
 
 " Multicursor like sublime text
 Plug 'terryma/vim-multiple-cursors'
@@ -60,12 +59,17 @@ Plug 'lervag/vimtex'
 call plug#end()
 
 " Let deoplete jedi do the completion
+let g:deoplete#enable_at_startup = 1
 let g:jedi#completions_enabled = 0
 let g:deoplete#sources#jedi#show_docstring = 1
 let g:deoplete#auto_complete=1
-let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 100
 
+" UltiSnips
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
 
 imap jk <Esc>
 imap kj <Esc>
@@ -167,9 +171,28 @@ set nohlsearch
 nnoremap <C-p> :<C-u>FZF<CR>
 nnoremap <C-b> :Buffers<CR>
 
-
-let g:UltiSnipsExpandTrigger="<tab>"
-
 let g:ale_linters = {'python': ['pylint']}
 let g:ale_fix_on_save = 0
 let g:ale_lint_on_save = 1
+
+
+
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+"if has('conceal')
+  "set conceallevel=2 concealcursor=niv
+"endif
