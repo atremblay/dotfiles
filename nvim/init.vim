@@ -42,6 +42,7 @@ Plug 'tpope/vim-surround'
 "Plug 'Shougo/neosnippet.vim'
 "Plug 'Shougo/neosnippet-snippets'
 Plug 'ryanoasis/vim-devicons'
+Plug 'sirver/ultisnips'
 
 " Multicursor like sublime text
 Plug 'terryma/vim-multiple-cursors'
@@ -52,6 +53,10 @@ Plug 'junegunn/fzf.vim'
 
 " Linting
 Plug 'w0rp/ale'
+
+" LaTeX
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 " Let deoplete jedi do the completion
@@ -64,8 +69,8 @@ let g:deoplete#auto_complete_delay = 100
 
 imap jk <Esc>
 imap kj <Esc>
-nmap <S-w> :w <CR>
-imap <S-w> <Esc>:w <CR>
+"nmap <S-w> :w <CR>
+"imap <S-w> <Esc>:w <CR>
 
 "if (has("termguicolors"))
 set termguicolors
