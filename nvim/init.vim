@@ -1,8 +1,7 @@
-" File              : init.vim
-" Author            : Alexis Tremblay <atremblay@explorance.com>
-" Date              : 26.04.2019
-" Last Modified Date: 29.04.2019
-" Last Modified By  : Alexis Tremblay <atremblay@explorance.com>
+
+" NOTES:
+" The default binding for vim popup selection is <c-n> , <c-p> besides arrow key
+
 
 call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -69,7 +68,9 @@ let g:deoplete#auto_complete_delay = 100
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetDir=$HOME."/.config/nvim/my_snippets"
 let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
+let g:UltiSnipsUsePythonVersion = 3
 
 imap jk <Esc>
 imap kj <Esc>
@@ -149,7 +150,6 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 autocmd BufWritePre *.py :%s/\s\+$//e
 let g:python3_host_prog = expand("$HOME/miniconda3/envs/neovim/bin/python")
 
-"let g:UltiSnipsUsePythonVersion = 3
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -171,10 +171,17 @@ set nohlsearch
 nnoremap <C-p> :<C-u>FZF<CR>
 nnoremap <C-b> :Buffers<CR>
 
+" ALE config
 let g:ale_linters = {'python': ['pylint']}
 let g:ale_fix_on_save = 0
 let g:ale_lint_on_save = 1
 
+" vimtex config
+let g:tex_flavor='latex'
+let g:vimtex_view_method = 'skim'
+let g:vimtex_quickfix_mode=1
+set conceallevel=1
+let g:tex_conceal='abdmg'
 
 
 " Plugin key-mappings.
