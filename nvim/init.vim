@@ -1,7 +1,5 @@
-
 " NOTES:
 " The default binding for vim popup selection is <c-n> , <c-p> besides arrow key
-
 
 call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -14,10 +12,8 @@ Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-"Plug 'kien/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'alpertuna/vim-header'
 
 " theme
 Plug 'mhartington/oceanic-next'
@@ -41,6 +37,7 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'ryanoasis/vim-devicons'
+Plug 'tmhedberg/SimpylFold'
 
 " Multicursor like sublime text
 Plug 'terryma/vim-multiple-cursors'
@@ -55,6 +52,7 @@ Plug 'w0rp/ale'
 " LaTeX
 Plug 'lervag/vimtex'
 
+"Plug 'kiteco/vim-plugin'
 call plug#end()
 
 " Let deoplete jedi do the completion
@@ -74,14 +72,11 @@ let g:UltiSnipsUsePythonVersion = 3
 
 imap jk <Esc>
 imap kj <Esc>
-"nmap <S-w> :w <CR>
-"imap <S-w> <Esc>:w <CR>
 
 "if (has("termguicolors"))
 set termguicolors
 "endif
 
-"let ayucolor="dark"
 let ayucolor="mirage"
 colorscheme ayu
 syntax enable
@@ -89,7 +84,7 @@ syntax enable
 let g:nord_cursor_line_number_background = 1
 let g:nord_italic_comments = 1
 "colorscheme nord
-let g:airline_theme='ayu'
+let g:airline_theme='ayu_mirage'
 "let g:airline_theme='nord'
 
 " split navigation
@@ -182,7 +177,6 @@ let g:vimtex_view_method='skim'
 let g:vimtex_quickfix_mode=1
 set conceallevel=1
 let g:tex_conceal='abdmg'
-
 
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
