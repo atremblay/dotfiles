@@ -15,10 +15,8 @@ Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-"Plug 'kien/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'alpertuna/vim-header'
 
 " theme
 Plug 'mhartington/oceanic-next'
@@ -42,6 +40,7 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'ryanoasis/vim-devicons'
+Plug 'tmhedberg/SimpylFold'
 
 " Multicursor like sublime text
 Plug 'terryma/vim-multiple-cursors'
@@ -56,6 +55,7 @@ Plug 'w0rp/ale'
 " LaTeX
 Plug 'lervag/vimtex'
 
+"Plug 'kiteco/vim-plugin'
 call plug#end()
 
 " Let deoplete jedi do the completion
@@ -80,7 +80,6 @@ imap kj <Esc>
 set termguicolors
 "endif
 
-"let ayucolor="dark"
 let ayucolor="mirage"
 colorscheme ayu
 syntax enable
@@ -88,7 +87,7 @@ syntax enable
 let g:nord_cursor_line_number_background = 1
 let g:nord_italic_comments = 1
 "colorscheme nord
-let g:airline_theme='ayu'
+let g:airline_theme='ayu_mirage'
 "let g:airline_theme='nord'
 
 " split navigation
@@ -174,7 +173,6 @@ nnoremap <C-b> :Buffers<CR>
 let g:ale_linters = {'python': ['pylint']}
 let g:ale_fix_on_save = 0
 let g:ale_lint_on_save = 1
-
 
 
 " Plugin key-mappings.
