@@ -72,8 +72,8 @@ let g:UltiSnipsUsePythonVersion = 3
 
 imap jk <Esc>
 imap kj <Esc>
-nmap aa O<Esc>j
-nmap bb o<Esc>k
+nmap <leader>a O<Esc>j
+nmap <leader>b o<Esc>k
 
 "if (has("termguicolors"))
 set termguicolors
@@ -170,7 +170,8 @@ nnoremap <C-b> :Buffers<CR>
 
 " ALE config
 let g:ale_linters = {'python': ['pylint']}
-let g:ale_fix_on_save = 0
+let b:ale_fixers = {'python': ['black']}
+let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
 
 " vimtex config
