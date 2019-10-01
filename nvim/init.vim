@@ -19,6 +19,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhartington/oceanic-next'
 Plug 'arcticicestudio/nord-vim', { 'on':  'NERDTreeToggle' }
 Plug 'ayu-theme/ayu-vim'
+Plug 'arzg/vim-corvine'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 " expanding abbreviations
