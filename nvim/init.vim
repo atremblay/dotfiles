@@ -39,6 +39,7 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tmhedberg/SimpylFold'
+Plug 'whatyouhide/vim-lengthmatters'
 
 " Multicursor like sublime text
 Plug 'terryma/vim-multiple-cursors'
@@ -119,6 +120,9 @@ set nu
 set rnu
 " Stay X lines from top or bottom
 set scrolloff=10
+
+" Highlight rest of the line that is too long
+let g:lengthmatters_start_at_column = 89
 
 augroup numbertoggle
   autocmd!
