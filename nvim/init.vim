@@ -98,7 +98,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Change between tabs
-nnoremap <A-Left> :tabprevious<CR>                                                                            
+nnoremap <A-Left> :tabprevious<CR>
 nnoremap <A-Right> :tabnext<CR>
 
 " Indentation
@@ -150,7 +150,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 " Remove trailing white space in python files
 autocmd BufWritePre *.py :%s/\s\+$//e
-let g:python3_host_prog = expand("$HOME/miniconda3/envs/neovim/bin/python")
+let g:python3_host_prog = $HOME."/miniconda3/envs/neovim/bin/python"
 
 
 if exists('+termguicolors')
@@ -174,8 +174,21 @@ nnoremap <C-p> :<C-u>FZF<CR>
 nnoremap <C-b> :Buffers<CR>
 
 " ALE config
+let g:ale_python_black_executable=$HOME."/miniconda3/envs/neovim/bin/black"
+let g:ale_python_pylint_options=$HOME."/.pylintrc"
+
 let g:ale_linters = {'python': ['pylint']}
-let b:ale_fixers = {'python': ['black']}
+let b:ale_fixers = {
+    \ 'python': [
+        \ 'black',
+        \ 'add_blank_lines_for_python_control_statements',
+        \ 'isort'
+    \ ],
+    \ '*': [
+        \ 'trim_whitespace',
+        \ 'remove_trailing_lines',
+    \ ]
+\ }
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_save = 1
 
