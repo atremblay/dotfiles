@@ -21,6 +21,8 @@ Plug 'arcticicestudio/nord-vim', { 'on':  'NERDTreeToggle' }
 Plug 'ayu-theme/ayu-vim'
 Plug 'arzg/vim-corvine'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
 
 " expanding abbreviations
 Plug 'mattn/emmet-vim'
@@ -38,11 +40,11 @@ Plug 'tpope/vim-surround'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'ryanoasis/vim-devicons'
-Plug 'tmhedberg/SimpylFold'
+"Plug 'tmhedberg/SimpylFold'
 Plug 'whatyouhide/vim-lengthmatters'
 
 " Multicursor like sublime text
-Plug 'terryma/vim-multiple-cursors'
+"Plug 'terryma/vim-multiple-cursors'
 
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -52,7 +54,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 
 " LaTeX
-Plug 'lervag/vimtex'
+"Plug 'lervag/vimtex'
 
 "Plug 'kiteco/vim-plugin'
 call plug#end()
@@ -82,14 +84,15 @@ set termguicolors
 "endif
 
 let ayucolor="mirage"
-colorscheme ayu
+"colorscheme ayu
+colorscheme jellybeans
 syntax enable
 "colorscheme OceanicNext
 let g:nord_cursor_line_number_background = 1
 let g:nord_italic_comments = 1
 "colorscheme nord
-let g:airline_theme='ayu_mirage'
-"let g:airline_theme='nord'
+"let g:airline_theme='ayu_mirage'
+let g:airline_theme='nord'
 
 " split navigation
 nnoremap <C-J> <C-W><C-J>
@@ -139,7 +142,6 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    "\ set wrapmargin=79 |
     \ set textwidth=0 |
     \ set autoindent |
     \ set expandtab |
@@ -173,11 +175,20 @@ set nohlsearch
 nnoremap <C-p> :<C-u>FZF<CR>
 nnoremap <C-b> :Buffers<CR>
 
+" when to activate neomake
+call neomake#configure#automake('nrw', 50)
+
+" which linter to enable for Python source file linting
+let g:neomake_python_pylint_maker = {
+  \ 'args': [
+  \ '--rcfile', $HOME.'/.pylintrc',
+  \ '-d', 'C0411'
+  \ ],
+  \ }
+let g:neomake_python_enabled_makers = ['pylint']
+
 " ALE config
 let g:ale_python_black_executable=$HOME."/miniconda3/envs/neovim/bin/black"
-let g:ale_python_pylint_options=$HOME."/.pylintrc"
-
-let g:ale_linters = {'python': ['pylint']}
 let b:ale_fixers = {
     \ 'python': [
         \ 'black',
@@ -190,7 +201,6 @@ let b:ale_fixers = {
     \ ]
 \ }
 let g:ale_fix_on_save = 1
-let g:ale_lint_on_save = 1
 
 " vimtex config
 let g:tex_flavor='latex'
