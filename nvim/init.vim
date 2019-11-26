@@ -2,77 +2,31 @@
 " The default binding for vim popup selection is <c-n> , <c-p> besides arrow key
 
 call plug#begin()
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'ncm2/ncm2'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'davidhalter/jedi-vim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'scrooloose/nerdtree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " theme
-Plug 'mhartington/oceanic-next'
 Plug 'arcticicestudio/nord-vim', { 'on':  'NERDTreeToggle' }
 Plug 'ayu-theme/ayu-vim'
-Plug 'arzg/vim-corvine'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
-
-" expanding abbreviations
-Plug 'mattn/emmet-vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" Linting https://github.com/neomake/neomake
-Plug 'neomake/neomake'
 
 " Utils
-Plug 'tpope/vim-surround'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'ryanoasis/vim-devicons'
-"Plug 'tmhedberg/SimpylFold'
-Plug 'whatyouhide/vim-lengthmatters'
-
-" Multicursor like sublime text
-"Plug 'terryma/vim-multiple-cursors'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" Linting
-Plug 'w0rp/ale'
-
-" LaTeX
-"Plug 'lervag/vimtex'
-
-"Plug 'kiteco/vim-plugin'
 call plug#end()
 
-" Let deoplete jedi do the completion
-let g:deoplete#enable_at_startup = 1
-let g:jedi#completions_enabled = 0
-let g:deoplete#sources#jedi#show_docstring = 1
-let g:deoplete#auto_complete=1
-let g:deoplete#auto_complete_delay = 100
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-let g:UltiSnipsSnippetDir=$HOME."/.config/nvim/my_snippets"
-let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
-let g:UltiSnipsUsePythonVersion = 3
 
 imap jk <Esc>
 imap kj <Esc>
@@ -83,16 +37,17 @@ nmap <leader>b o<Esc>k
 set termguicolors
 "endif
 
-let ayucolor="mirage"
-"colorscheme ayu
-colorscheme jellybeans
+"""""""""""""""
+" Theme stuff "
+"""""""""""""""
+let ayucolor="dark"
+colorscheme ayu
+"colorscheme jellybeans
 syntax enable
-"colorscheme OceanicNext
 let g:nord_cursor_line_number_background = 1
 let g:nord_italic_comments = 1
-"colorscheme nord
-"let g:airline_theme='ayu_mirage'
-let g:airline_theme='nord'
+"let g:airline_theme='nord'
+let g:airline_theme='ayu_dark'
 
 " split navigation
 nnoremap <C-J> <C-W><C-J>
@@ -103,6 +58,9 @@ nnoremap <C-H> <C-W><C-H>
 " Change between tabs
 nnoremap <A-Left> :tabprevious<CR>
 nnoremap <A-Right> :tabnext<CR>
+
+" NERDTreeToggle
+map <F2> :NERDTreeToggle<CR>
 
 " Indentation
 set autoindent
@@ -124,9 +82,6 @@ set rnu
 " Stay X lines from top or bottom
 set scrolloff=10
 
-" Highlight rest of the line that is too long
-let g:lengthmatters_start_at_column = 89
-
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
@@ -147,9 +102,6 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set fileformat=unix
 
-map <F2> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-
 " Remove trailing white space in python files
 autocmd BufWritePre *.py :%s/\s\+$//e
 let g:python3_host_prog = $HOME."/miniconda3/envs/neovim/bin/python"
@@ -161,12 +113,6 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-
-let g:header_field_author = 'Alexis Tremblay'
-let g:header_field_author_email = 'atremblay@explorance.com'
-let g:header_field_timestamp = 1
-map <F4> :AddHeader<CR>
-
 " stop highlighting search
 set nohlsearch
 
@@ -175,56 +121,31 @@ set nohlsearch
 nnoremap <C-p> :<C-u>FZF<CR>
 nnoremap <C-b> :Buffers<CR>
 
-" when to activate neomake
-call neomake#configure#automake('nrw', 50)
+""""""""""""""
+" coc config "
+""""""""""""""
+set updatetime=300
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <F6> <Plug>(coc-rename)
 
-" which linter to enable for Python source file linting
-let g:neomake_python_pylint_maker = {
-  \ 'args': [
-  \ '--rcfile', $HOME.'/.pylintrc',
-  \ '-d', 'C0411'
-  \ ],
-  \ }
-let g:neomake_python_enabled_makers = ['pylint']
+let g:coc_global_extensions = [
+    \"coc-python",
+    \"coc-json",
+    \"coc-html",
+    \"coc-css",
+    \"coc-snippets"
+\]
 
-" ALE config
-let g:ale_python_black_executable=$HOME."/miniconda3/envs/neovim/bin/black"
-let b:ale_fixers = {
-    \ 'python': [
-        \ 'black',
-        \ 'add_blank_lines_for_python_control_statements',
-        \ 'isort'
-    \ ],
-    \ '*': [
-        \ 'trim_whitespace',
-        \ 'remove_trailing_lines',
-    \ ]
-\ }
-let g:ale_fix_on_save = 1
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? coc#_select_confirm() :
+  \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
 
-" vimtex config
-let g:tex_flavor='latex'
-let g:vimtex_view_method='skim'
-let g:vimtex_quickfix_mode=1
-set conceallevel=1
-let g:tex_conceal='abdmg'
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-"if has('conceal')
-  "set conceallevel=2 concealcursor=niv
-"endif
+let g:coc_snippet_next = '<tab>'
