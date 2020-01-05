@@ -3,6 +3,8 @@
 
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
@@ -16,17 +18,29 @@ Plug 'nanotech/jellybeans.vim'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Utils
 Plug 'ryanoasis/vim-devicons'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+" LaTeX
+Plug 'lervag/vimtex'
+
 call plug#end()
 
+let g:deoplete#enable_at_startup = 1
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetDir=$HOME."/.config/nvim/my_snippets"
+let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
+let g:UltiSnipsUsePythonVersion = 3
 
 imap jk <Esc>
 imap kj <Esc>
@@ -40,14 +54,10 @@ set termguicolors
 """""""""""""""
 " Theme stuff "
 """""""""""""""
-let ayucolor="dark"
-colorscheme ayu
-"colorscheme jellybeans
+colorscheme jellybeans
 syntax enable
 let g:nord_cursor_line_number_background = 1
 let g:nord_italic_comments = 1
-"let g:airline_theme='nord'
-let g:airline_theme='ayu_dark'
 
 " split navigation
 nnoremap <C-J> <C-W><C-J>
