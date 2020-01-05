@@ -13,6 +13,13 @@ if [ -e $HOME/.config/nvim/init.vim ]; then
 fi
 ln -s $HOME/dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
 
+mkdir -p $HOME/.config/nvim/
+if [ -e $HOME/.config/nvim/coc-settings.json ]; then
+    echo "Moving old \$HOME/.config/nvim/coc-settings.json to \$HOME/.config/nvim/coc-settings.json.old"
+    mv $HOME/.config/nvim/coc-settings.json $HOME/.config/nvim/coc-settings.json.old
+fi
+ln -s $HOME/dotfiles/nvim/coc-settings.json $HOME/.config/nvim/coc-settings.json
+
 if [ -e $HOME/.tmux.conf ]; then
     echo "Moving old \$HOME/.tmux.conf to \$HOME/.tmux.conf.old"
     mv $HOME/.tmux.conf $HOME/.tmux.conf.old
