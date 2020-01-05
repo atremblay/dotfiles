@@ -1,0 +1,15 @@
+{
+    "python.jediEnabled": false,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": ["--rcfile", "~/.pylintrc", "-d", "C0411"],
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "~/miniconda3/envs/neovim/bin/black",
+    "python.linting.pylintUseMinimalCheckers": false,
+    "python.linting.pylintPath": "pylint",
+    "python.condaPath": "conda",
+    "python.sortImports.path": "isort",
+    "python.sortImports.args": ["-sp", ".isort.cfg"],
+    "coc.preferences.formatOnSaveFiletypes": ["python"],
+    "markdownlint.onChange": true,
+    "markdownlint.config": {"line_length": false}
+}
