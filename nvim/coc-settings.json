@@ -1,5 +1,5 @@
 {
-    "python.jediEnabled": false,
+    "python.jediEnabled":true,
     "python.linting.enabled": true,
     "python.linting.pylintArgs": ["--rcfile", "~/.pylintrc", "-d", "C0411"],
     "python.formatting.provider": "black",
