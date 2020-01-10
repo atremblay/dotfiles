@@ -22,6 +22,7 @@ Plug 'airblade/vim-gitgutter'
 " Utils
 Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'janko/vim-test'
 
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
