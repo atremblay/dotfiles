@@ -14,6 +14,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'arcticicestudio/nord-vim', { 'on':  'NERDTreeToggle' }
 Plug 'ayu-theme/ayu-vim'
 Plug 'nanotech/jellybeans.vim'
+Plug 'rakr/vim-two-firewatch'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -24,6 +25,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'janko/vim-test'
 Plug 'tpope/vim-projectionist'
+Plug 'puremourning/vimspector'
 
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -54,13 +56,16 @@ imap kj <Esc>
 nmap <leader>a O<Esc>j
 nmap <leader>b o<Esc>k
 
-"if (has("termguicolors"))
-set termguicolors
-"endif
 
 """""""""""""""
 " Theme stuff "
 """""""""""""""
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 let ayucolor="dark"
 colorscheme ayu
 syntax enable
@@ -125,17 +130,8 @@ au BufNewFile,BufRead *.py
 autocmd BufWritePre *.py :%s/\s\+$//e
 let g:python3_host_prog = $HOME."/miniconda3/envs/neovim/bin/python"
 
-
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
-
 " stop highlighting search
 set nohlsearch
-
-"let g:jedi#max_doc_height = 75
 
 nnoremap <C-p> :<C-u>FZF<CR>
 nnoremap <C-b> :Buffers<CR>
