@@ -30,6 +30,7 @@ Plug 'puremourning/vimspector'
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'yuki-ycino/fzf-preview.vim'
 
 " LaTeX
 Plug 'lervag/vimtex'
@@ -133,7 +134,8 @@ let g:python3_host_prog = $HOME."/miniconda3/envs/neovim/bin/python"
 " stop highlighting search
 set nohlsearch
 
-nnoremap <C-p> :<C-u>FZF<CR>
+"nnoremap <C-p> :<C-u>FZF<CR>
+nnoremap <C-p> :<C-u>FzfPreviewDirectoryFiles<CR>
 nnoremap <C-b> :Buffers<CR>
 
 """"""""""""""
@@ -142,7 +144,8 @@ nnoremap <C-b> :Buffers<CR>
 set updatetime=300
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
-nmap <F6> <Plug>(coc-rename)
+let g:vimspector_enable_mappings = 'HUMAN'
+nmap <C-r> <Plug>(coc-rename)
 
 let g:coc_global_extensions = [
     \"coc-python",
