@@ -38,3 +38,8 @@ if [ -e $HOME/.zshaliases ]; then
 fi
 ln -s $HOME/dotfiles/zsh/zshaliases $HOME/.zshaliases
 
+if [ -e $HOME/.p10k.zsh ]; then
+    echo "Moving old \$HOME/.p10k.zsh to \$HOME/.p10k.zsh.old"
+    mv $HOME/.p10k.zsh $HOME/.p10k.zsh.old
+fi
+ln -s $HOME/dotfiles/zsh/p10k.zsh $HOME/.p10k.zsh
