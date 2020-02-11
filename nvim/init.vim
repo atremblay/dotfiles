@@ -145,7 +145,7 @@ set updatetime=300
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 let g:vimspector_enable_mappings = 'HUMAN'
-nmap <C-r> <Plug>(coc-rename)
+nmap <C-R> <Plug>(coc-rename)
 
 let g:coc_global_extensions = [
     \"coc-python",
