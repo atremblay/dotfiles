@@ -53,13 +53,13 @@ let g:UltiSnipsSnippetDir=$HOME."/.config/nvim/my_snippets"
 let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
 let g:UltiSnipsUsePythonVersion = 3
 
-" Basic remaping
+" Basic remapping
 :let mapleader = " "
 imap jk <Esc>
 imap kj <Esc>
 nmap <leader>a O<Esc>j
 nmap <leader>b o<Esc>k
-" Remaping to delete in the 'black hole' registry
+" Mapping to delete in the 'black hole' registry
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 
@@ -72,12 +72,13 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-let ayucolor="dark"
-colorscheme ayu
+"let ayucolor="dark"
+"colorscheme ayu
+colorscheme gruvbox
 syntax enable
 let g:nord_cursor_line_number_background = 1
 let g:nord_italic_comments = 1
-let g:airline_theme='ayu_dark'
+"let g:airline_theme='ayu_dark'
 
 " split navigation
 nnoremap <C-J> <C-W><C-J>
