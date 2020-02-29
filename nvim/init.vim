@@ -1,6 +1,7 @@
 " NOTES:
 " The default binding for vim popup selection is <c-n> , <c-p> besides arrow key
 
+"{{{ Plug
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdcommenter'
@@ -37,23 +38,26 @@ Plug 'yuki-ycino/fzf-preview.vim'
 " LaTeX
 Plug 'lervag/vimtex'
 call plug#end()
+"}}}
 
-" Mapping for vim-test
+"{{{ Mapping for vim-test
 nmap <silent> t<C-n> :TestNearest<CR>
 nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
+"}}}
 
-" UltiSnips
+"{{{ UltiSnips
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsSnippetDir=$HOME."/.config/nvim/my_snippets"
 let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
 let g:UltiSnipsUsePythonVersion = 3
+"}}}
 
-" Basic remapping
+"{{{ Basic remapping
 :let mapleader = " "
 imap jk <Esc>
 imap kj <Esc>
@@ -62,10 +66,9 @@ nmap <leader>b o<Esc>k
 " Mapping to delete in the 'black hole' registry
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
+"}}}
 
-"""""""""""""""
-" Theme stuff "
-"""""""""""""""
+"{{{ Theme stuff
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -80,19 +83,27 @@ let g:airline_theme='gruvbox'
 syntax enable
 let g:nord_cursor_line_number_background = 1
 let g:nord_italic_comments = 1
+"}}}
 
+"{{{ Navigation
+"{{{2 Split Navigation
 " split navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" Change between tabs
+"}}}2
+"{{{2 Change between tabs
 nnoremap <A-Left> :tabprevious<CR>
 nnoremap <A-Right> :tabnext<CR>
+"}}}2
+"}}}
 
 " NERDTreeToggle
 map <F2> :NERDTreeToggle<CR>
+
+" Folding
+set foldmethod=marker
 
 " Indentation
 set autoindent
@@ -145,13 +156,12 @@ set nohlsearch
 nnoremap <C-p> :<C-u>FzfPreviewDirectoryFiles<CR>
 nnoremap <C-b> :Buffers<CR>
 
-""""""""""""""
-" coc config "
-""""""""""""""
+"let g:vimspector_enable_mappings = 'HUMAN'
+
+"{{{ Coc Config
 set updatetime=300
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
-"let g:vimspector_enable_mappings = 'HUMAN'
 nmap <F6> <Plug>(coc-rename)
 
 let g:coc_global_extensions = [
@@ -175,3 +185,4 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
+"}}}
