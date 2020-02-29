@@ -15,6 +15,7 @@ Plug 'arcticicestudio/nord-vim', { 'on':  'NERDTreeToggle' }
 Plug 'ayu-theme/ayu-vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'rakr/vim-two-firewatch'
+Plug 'morhetz/gruvbox'
 
 " Git
 Plug 'tpope/vim-fugitive'
