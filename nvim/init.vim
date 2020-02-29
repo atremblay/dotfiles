@@ -74,11 +74,12 @@ endif
 
 "let ayucolor="dark"
 "colorscheme ayu
+"let g:airline_theme='ayu_dark'
 colorscheme gruvbox
+let g:airline_theme='gruvbox'
 syntax enable
 let g:nord_cursor_line_number_background = 1
 let g:nord_italic_comments = 1
-"let g:airline_theme='ayu_dark'
 
 " split navigation
 nnoremap <C-J> <C-W><C-J>
