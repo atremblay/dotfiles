@@ -40,22 +40,7 @@ Plug 'lervag/vimtex'
 call plug#end()
 "}}}
 
-"{{{ Mapping for vim-test
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
-"}}}
 
-"{{{ UltiSnips
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-let g:UltiSnipsSnippetDir=$HOME."/.config/nvim/my_snippets"
-let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
-let g:UltiSnipsUsePythonVersion = 3
-"}}}
 
 "{{{ Basic remapping
 :let mapleader = " "
@@ -99,9 +84,70 @@ nnoremap <A-Right> :tabnext<CR>
 "}}}2
 "}}}
 
-" NERDTreeToggle
-map <F2> :NERDTreeToggle<CR>
+"{{{1 Plugin Config
+"{{{2 Coc 
+set updatetime=300
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <F6> <Plug>(coc-rename)
 
+let g:coc_global_extensions = [
+    \"coc-python",
+    \"coc-json",
+    \"coc-html",
+    \"coc-css",
+    \"coc-snippets",
+    \"coc-git"
+\]
+
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? coc#_select_confirm() :
+  \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+"}}}2
+
+"{{{2 UltiSnips
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetDir=$HOME."/.config/nvim/my_snippets"
+let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
+let g:UltiSnipsUsePythonVersion = 3
+"}}}2
+
+"{{{2 Vim-test
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+"}}}2
+
+"{{{ 2 NERDTree
+map <F2> :NERDTreeToggle<CR>
+"}}}2
+
+"{{{2 FZF
+"nnoremap <C-p> :<C-u>FZF<CR>
+nnoremap <C-p> :<C-u>FzfPreviewDirectoryFiles<CR>
+nnoremap <C-b> :Buffers<CR>
+"}}}2
+
+"{{{2 Vimspector
+"let g:vimspector_enable_mappings = 'HUMAN'
+"}}}2
+
+"}}}1
+
+"{{{ Neovim settings
 " Folding
 set foldmethod=marker
 
@@ -151,38 +197,5 @@ let g:python3_host_prog = $HOME."/miniconda3/envs/neovim/bin/python"
 
 " stop highlighting search
 set nohlsearch
-
-"nnoremap <C-p> :<C-u>FZF<CR>
-nnoremap <C-p> :<C-u>FzfPreviewDirectoryFiles<CR>
-nnoremap <C-b> :Buffers<CR>
-
-"let g:vimspector_enable_mappings = 'HUMAN'
-
-"{{{ Coc Config
-set updatetime=300
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gr <Plug>(coc-references)
-nmap <F6> <Plug>(coc-rename)
-
-let g:coc_global_extensions = [
-    \"coc-python",
-    \"coc-json",
-    \"coc-html",
-    \"coc-css",
-    \"coc-snippets",
-    \"coc-git"
-\]
-
-inoremap <silent><expr> <TAB>
-  \ pumvisible() ? coc#_select_confirm() :
-  \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>'
 "}}}
+
