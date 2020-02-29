@@ -26,6 +26,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'janko/vim-test'
 Plug 'tpope/vim-projectionist'
 Plug 'puremourning/vimspector'
+Plug 'tmhedberg/SimpylFold'
 
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
