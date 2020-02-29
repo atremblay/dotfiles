@@ -52,11 +52,14 @@ let g:UltiSnipsSnippetDirectories=["my_snippets", "UltiSnips"]
 let g:UltiSnipsUsePythonVersion = 3
 
 " Basic remaping
+:let mapleader = " "
 imap jk <Esc>
 imap kj <Esc>
 nmap <leader>a O<Esc>j
 nmap <leader>b o<Esc>k
-
+" Remaping to delete in the 'black hole' registry
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
 
 """""""""""""""
 " Theme stuff "
