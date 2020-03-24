@@ -18,6 +18,9 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'rakr/vim-two-firewatch'
 Plug 'morhetz/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'jacoborus/tender.vim'
+Plug 'sjl/badwolf'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -64,14 +67,14 @@ if (has("nvim"))
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
-"let ayucolor="dark"
+"let ayucolor="mirage"
 "colorscheme ayu
-"let g:airline_theme='ayu_dark'
+"let g:airline_theme='ayu_mirage'
 colorscheme gruvbox
 let g:airline_theme='gruvbox'
 syntax enable
-let g:nord_cursor_line_number_background = 1
-let g:nord_italic_comments = 1
+"let g:nord_cursor_line_number_background = 1
+"let g:nord_italic_comments = 1
 "}}}
 
 "{{{ Navigation
@@ -93,7 +96,7 @@ nnoremap <A-Right> :tabnext<CR>
 set updatetime=300
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
-nmap <F6> <Plug>(coc-rename)
+nmap <C-F6> <Plug>(coc-rename)
 
 let g:coc_global_extensions = [
     \"coc-python",
@@ -133,6 +136,7 @@ nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
+let test#python#pytest#options = '--tb=short --durations=10 --fast'
 "}}}2
 
 "{{{ 2 NERDTree
@@ -146,7 +150,7 @@ nnoremap <C-b> :Buffers<CR>
 "}}}2
 
 "{{{2 Vimspector
-"let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_enable_mappings = 'HUMAN'
 "}}}2
 
 "}}}1
