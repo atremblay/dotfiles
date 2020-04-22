@@ -82,10 +82,10 @@ endif
 "let ayucolor="mirage"
 "colorscheme ayu
 "let g:airline_theme='ayu_mirage'
-"colorscheme gruvbox
-"let g:airline_theme='gruvbox'
-colorscheme iceberg
-let g:airline_theme='iceberg'
+colorscheme gruvbox
+let g:airline_theme='gruvbox'
+"colorscheme iceberg
+"let g:airline_theme='iceberg'
 syntax enable
 "let g:nord_cursor_line_number_background = 1
 "let g:nord_italic_comments = 1
