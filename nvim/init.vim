@@ -91,7 +91,7 @@ syntax enable
 "let g:nord_italic_comments = 1
 "}}}
 
-"{{{ Navigation
+"{{{ Splits and tabs
 "{{{2 Split Navigation
 " split navigation
 nnoremap <C-J> <C-W><C-J>
@@ -102,6 +102,16 @@ nnoremap <C-H> <C-W><C-H>
 "{{{2 Change between tabs
 nnoremap <A-Left> :tabprevious<CR>
 nnoremap <A-Right> :tabnext<CR>
+"}}}2
+"{{{2 Adjust splits
+noremap <silent> <Shift-Left> :vertical resize +3<CR>
+noremap <silent> <Shift-Right> :vertical resize -3<CR>
+noremap <silent> <Shift-Up> :resize +3<CR>
+noremap <silent> <Shift-Down> :resize +3<CR>
+"}}}2
+"{{{2 Switch split orientation
+map <Leader>th <C-w>t<C-w>H
+map <Leader>tk <C-w>t<C-w>K
 "}}}2
 "}}}
 
