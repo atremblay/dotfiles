@@ -37,6 +37,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'tomasiser/vim-code-dark'
+Plugin 'puremourning/vimspector'
 
 " All of your Plugins must be added before the following line
 " call vundle#end()            " required
@@ -122,6 +123,7 @@ colorscheme nord
 set rop=type:directx,gamma:1.0,contrast:0.5,level:1,geom:1,renmode:4,taamode:1
 let g:airline#extensions#tabline#switch_buffers_and_tabs = 0
 
+let g:vimspector_enable_mappings = 'HUMAN'
 
 "directory tree <F2>
 map <F2> :NERDTreeToggle<CR>

@@ -12,8 +12,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " theme
-Plug 'arcticicestudio/nord-vim', { 'on':  'NERDTreeToggle' }
+"Plug 'arcticicestudio/nord-vim', { 'on':  'NERDTreeToggle' }
+Plug 'arcticicestudio/nord-vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'whatyouhide/vim-gotham'
 Plug 'ayu-theme/ayu-vim'
+Plug 'AlessandroYorba/Alduin'
 Plug 'nanotech/jellybeans.vim'
 Plug 'rakr/vim-two-firewatch'
 Plug 'morhetz/gruvbox'
@@ -21,6 +25,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'jacoborus/tender.vim'
 Plug 'sjl/badwolf'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'edkolev/tmuxline.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -33,6 +38,8 @@ Plug 'janko/vim-test'
 Plug 'tpope/vim-projectionist'
 Plug 'puremourning/vimspector'
 Plug 'tmhedberg/SimpylFold'
+Plug 'vimwiki/vimwiki'
+Plug 'mattn/calendar-vim'
 
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -45,14 +52,19 @@ call plug#end()
 "}}}
 
 "{{{ Basic remapping
-:let mapleader = " "
 imap jk <Esc>
 imap kj <Esc>
 nmap <leader>a O<Esc>j
 nmap <leader>b o<Esc>k
+
 " Mapping to delete in the 'black hole' registry
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
+
+if has('nvim')
+    tnoremap jk <C-\><C-n>
+    tnoremap kj <C-\><C-n>
+endif
 "}}}
 
 "{{{ Theme stuff
@@ -70,8 +82,10 @@ endif
 "let ayucolor="mirage"
 "colorscheme ayu
 "let g:airline_theme='ayu_mirage'
-colorscheme gruvbox
-let g:airline_theme='gruvbox'
+"colorscheme gruvbox
+"let g:airline_theme='gruvbox'
+colorscheme iceberg
+let g:airline_theme='iceberg'
 syntax enable
 "let g:nord_cursor_line_number_background = 1
 "let g:nord_italic_comments = 1
@@ -136,7 +150,7 @@ nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
-let test#python#pytest#options = '--tb=short --durations=10 --fast'
+let test#python#pytest#options = '--tb=short --durations=10' 
 "}}}2
 
 "{{{ 2 NERDTree
@@ -153,6 +167,26 @@ nnoremap <C-b> :Buffers<CR>
 let g:vimspector_enable_mappings = 'HUMAN'
 "}}}2
 
+"{{{2 airline
+let g:airline_section_b=''
+"}}}2
+
+"{{{2 Vimwiki
+let g:vimwiki_list = [
+    \{'path':'~/vimwiki/friday', 'syntax': 'markdown', 'ext': '.md'},
+    \{'path':'~/vimwiki/explorance', 'syntax': 'markdown', 'ext': '.md'},
+    \{'path':'~/vimwiki/personal', 'syntax': 'markdown', 'ext': '.md'}
+\]
+:nmap <Leader>w <Plug>VimwikiIndex
+"}}}2
+
+"{{{2 Vimtext
+let g:tex_flavor='latex'
+let g:vimtex_view_method='skim'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+"}}}2
 "}}}1
 
 "{{{ Neovim settings
@@ -205,5 +239,7 @@ let g:python3_host_prog = $HOME."/miniconda3/envs/neovim/bin/python"
 
 " stop highlighting search
 set nohlsearch
+
+filetype plugin on
 "}}}
 
