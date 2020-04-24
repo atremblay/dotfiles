@@ -26,6 +26,7 @@ Plug 'jacoborus/tender.vim'
 Plug 'sjl/badwolf'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'edkolev/tmuxline.vim'
+Plug 'chuling/vim-equinusocio-material'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -67,29 +68,50 @@ if has('nvim')
 endif
 "}}}
 
-"{{{ Theme stuff
+"{{{1 Theme stuff
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+syntax enable
 
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
+"{{{2 ayu
 "let ayucolor="mirage"
 "colorscheme ayu
 "let g:airline_theme='ayu_mirage'
+"}}}2
+
+"{{{2 Gruvbox
 colorscheme gruvbox
 let g:airline_theme='gruvbox'
+"}}}2
+
+"{{{2 iceberg
 "colorscheme iceberg
 "let g:airline_theme='iceberg'
-syntax enable
+"}}}2
+
+"{{{2 Material
+"let g:airline_theme='equinusocio_material'
+"let g:equinusocio_material_hide_vertsplit = 1
+"let g:equinusocio_material_darker = 1
+"colorscheme equinusocio_material
+"let g:lightline = {
+  "\ 'colorscheme': 'equinusocio_material',
+  "\ }
+"}}}2
+
+"{{{2 Nord
 "let g:nord_cursor_line_number_background = 1
 "let g:nord_italic_comments = 1
-"}}}
+"}}}2
+"}}}1
 
 "{{{ Splits and tabs
 "{{{2 Split Navigation
@@ -120,7 +142,7 @@ map <Leader>tk <C-w>t<C-w>K
 set updatetime=300
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
-nmap <C-F6> <Plug>(coc-rename)
+nmap <F6> <Plug>(coc-rename)
 
 let g:coc_global_extensions = [
     \"coc-python",
@@ -174,7 +196,7 @@ nnoremap <C-b> :Buffers<CR>
 "}}}2
 
 "{{{2 Vimspector
-let g:vimspector_enable_mappings = 'HUMAN'
+"let g:vimspector_enable_mappings = 'HUMAN'
 "}}}2
 
 "{{{2 airline
