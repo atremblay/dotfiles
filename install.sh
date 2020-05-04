@@ -43,3 +43,10 @@ if [ -e $HOME/.p10k.zsh ]; then
     mv $HOME/.p10k.zsh $HOME/.p10k.zsh.old
 fi
 ln -s $HOME/dotfiles/zsh/p10k.zsh $HOME/.p10k.zsh
+
+mkdir -p $HOME/.config/alacritty/
+if [ -e $HOME/.config/alacritty/alacritty.yml ]; then
+    echo "Moving old \$HOME/.config/alacritty/alacritty.yml to \$HOME/.config/alacritty/alacritty.yml.old"
+    mv $HOME/.config/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml.old
+fi
+ln -s $HOME/dotfiles/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
