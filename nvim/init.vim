@@ -15,16 +15,10 @@ Plug 'vim-airline/vim-airline-themes'
 "Plug 'arcticicestudio/nord-vim', { 'on':  'NERDTreeToggle' }
 Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
-Plug 'whatyouhide/vim-gotham'
 Plug 'ayu-theme/ayu-vim'
-Plug 'AlessandroYorba/Alduin'
 Plug 'nanotech/jellybeans.vim'
-Plug 'rakr/vim-two-firewatch'
 Plug 'morhetz/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'jacoborus/tender.vim'
-Plug 'sjl/badwolf'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'edkolev/tmuxline.vim'
 Plug 'chuling/vim-equinusocio-material'
 
@@ -126,10 +120,10 @@ nnoremap <A-Left> :tabprevious<CR>
 nnoremap <A-Right> :tabnext<CR>
 "}}}2
 "{{{2 Adjust splits
-noremap <silent> <Shift-Left> :vertical resize +3<CR>
-noremap <silent> <Shift-Right> :vertical resize -3<CR>
-noremap <silent> <Shift-Up> :resize +3<CR>
-noremap <silent> <Shift-Down> :resize +3<CR>
+noremap <silent> ˙ :vertical resize +3<CR>
+noremap <silent> ¬ :vertical resize -3<CR>
+noremap <silent> ˚ :resize +3<CR>
+noremap <silent> ∆ :resize +3<CR>
 "}}}2
 "{{{2 Switch split orientation
 map <Leader>th <C-w>t<C-w>H
