@@ -10,3 +10,5 @@ alias gf='git fetch'
 alias grb='git rebase'
 alias gsu='git submodule update'
 
+# nvim
+alias nv=nvim
