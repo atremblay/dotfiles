@@ -12,7 +12,7 @@ scrolling:
   # Specifying '0' will disable scrolling.
   history: 100000
   multiplier: 3
-background_opacity: 1.0
+background_opacity: 0.97
 #}}}
 font:
   normal:
@@ -24,7 +24,7 @@ font:
   italic:
     family: MesloLGS NF
     style: Italic
-  size: 13
+  size: 12
 #{{{1 Colorscheme
 #{{{2 Iceberg
 # Colors (Iceberg)
