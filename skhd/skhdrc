@@ -1,0 +1,33 @@
+
+# Move between window
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
+alt - k : yabai -m window --focus north
+alt - j : yabai -m window --focus south
+
+alt - r : yabai -m space --rotate 90
+shift + alt - h : yabai -m window --swap west
+shift + alt - l : yabai -m window --swap east
+shift + alt - k : yabai -m window --swap north
+shift + alt - j : yabai -m window --swap south
+
+lalt + lcmd - h : yabai -m space --focus prev
+lalt + lcmd - l : yabai -m space --focus next
+
+alt - f : yabai -m window --toggle float;yabai -m window --grid 6:6:1:1:4:4
+
+# Change size left handle. Minus triggered by adding shift
+alt - a : yabai -m window --resize left:-20:0
+shift + alt - a : yabai -m window --resize left:20:0
+
+# Change size right handle. Minus triggered by adding shift
+alt - d : yabai -m window --resize right:20:0
+shift + alt - d : yabai -m window --resize right:-20:0
+
+# Change size top handle. Minus triggered by adding shift
+alt - w : yabai -m window --resize top:0:-20
+shift + alt - w : yabai -m window --resize top:0:20
+
+# Change size bottom handle. Minus triggered by adding shift
+alt - s : yabai -m window --resize bottom:0:20
+shift + alt - s : yabai -m window --resize bottom:0:-20
