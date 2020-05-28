@@ -1,11 +1,12 @@
 yabai -m config split_ratio 0.5
 
-# Make default space layout to float
-yabai -m config layout float
+# Make default space layout to bsp
+yabai -m config layout bsp
 
 # Set space 2 and 3 to bsp layout
-yabai -m config --space 2 layout bsp
-yabai -m config --space 3 layout bsp
+yabai -m config --space 1 layout float
+#yabai -m config --space 2 layout bsp
+#yabai -m config --space 3 layout bsp
 
 # Just a bit of visual
 yabai -m config top_padding                  5
@@ -13,3 +14,5 @@ yabai -m config bottom_padding               5
 yabai -m config left_padding                 5
 yabai -m config right_padding                5
 yabai -m config window_gap                   5
+
+yabai -m config mouse_follows_focus on
