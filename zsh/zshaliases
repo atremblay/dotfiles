@@ -3,7 +3,7 @@
 alias grep='grep -r -n --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias ll='ls -l'
+alias ll='exa -la'
 
 #git
 alias gf='git fetch'
