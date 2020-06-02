@@ -19,12 +19,6 @@ meh - j : yabai -m window --insert south
 meh - k : yabai -m window --insert north
 meh - l : yabai -m window --insert east
 
-alt - r : yabai -m space --rotate 90
-
-lalt + lcmd - h : yabai -m space --focus prev
-lalt + lcmd - l : yabai -m space --focus next
-
-alt - f : yabai -m window --toggle float;yabai -m window --grid 6:6:1:1:4:4
 
 # Change size left handle. Minus triggered by adding shift
 alt - a : yabai -m window --resize left:-20:0
@@ -97,3 +91,16 @@ ctrl + cmd - 0 : yabai -m space --focus 10
 # change layout of desktop
 ctrl + alt - t : yabai -m space --layout bsp
 ctrl + alt - f : yabai -m space --layout float
+
+
+# toggle window parent zoom
+alt - b : yabai -m window --toggle zoom-parent
+ 
+# toggle window fullscreen zoom
+alt - f : yabai -m window --toggle zoom-fullscreen
+ 
+# toggle window native fullscreen
+shift + alt - f : yabai -m window --toggle native-fullscreen
+
+# rotate the windows in the current space
+alt - r : yabai -m space --rotate 90
