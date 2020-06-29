@@ -2,10 +2,10 @@
 # meh (shift + alt + ctrl)
 
 # Focus window
-alt - h : yabai -m window --focus west
-alt - l : yabai -m window --focus east
-alt - k : yabai -m window --focus north
-alt - j : yabai -m window --focus south
+lalt - h : yabai -m window --focus west
+lalt - l : yabai -m window --focus east
+lalt - k : yabai -m window --focus north
+lalt - j : yabai -m window --focus south
 
 # Swap window
 shift + cmd - h : yabai -m window --swap west
@@ -104,3 +104,6 @@ shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # rotate the windows in the current space
 alt - r : yabai -m space --rotate 90
+
+# Balance the size of all window in the space
+shift + alt - b : yabai -m space --balance
