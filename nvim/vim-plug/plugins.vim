@@ -13,6 +13,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'liuchengxu/vim-which-key'
 
 " theme
 "Plug 'arcticicestudio/nord-vim', { 'on':  'NERDTreeToggle' }

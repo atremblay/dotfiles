@@ -7,6 +7,7 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/vimtest.vim
 source $HOME/.config/nvim/plug-config/ultisnips.vim
+source $HOME/.config/nvim/plug-config/which-key.vim
 
 "{{{ Basic remapping
 imap jk <Esc>
