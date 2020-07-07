@@ -49,7 +49,6 @@ colorscheme gruvbox
 let g:airline_theme='gruvbox'
 "}}}2
 
-
 "{{{2 iceberg
 "colorscheme iceberg
 "let g:airline_theme='iceberg'
