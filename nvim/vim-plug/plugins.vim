@@ -16,7 +16,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'liuchengxu/vim-which-key'
 
 " theme
-"Plug 'arcticicestudio/nord-vim', { 'on':  'NERDTreeToggle' }
 Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'ayu-theme/ayu-vim'
@@ -24,7 +23,8 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'edkolev/tmuxline.vim'
-Plug 'chuling/vim-equinusocio-material'
+Plug 'aditya-azad/candle-grey'
+Plug 'chuling/equinusocio-material.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -43,7 +43,7 @@ Plug 'mattn/calendar-vim'
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'yuki-ycino/fzf-preview.vim'
+Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release' }
 
 " LaTeX
 Plug 'lervag/vimtex'

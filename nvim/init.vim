@@ -39,16 +39,20 @@ if (has("nvim"))
 endif
 
 "{{{2 ayu
-"let ayucolor="mirage"
+" valid values: mirage, light, dark 
+"let ayucolor="dark"
 "colorscheme ayu
-"let g:airline_theme='ayu_mirage'
+" valid values: ayu_mirage, ayu_light, ayu_dark 
+"let g:airline_theme='ayu_dark'
 "}}}2
 
 "{{{2 Gruvbox
-colorscheme gruvbox
 let g:airline_theme='gruvbox'
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_invert_selection='0'
+colorscheme gruvbox
+set background=dark
 "}}}2
-
 
 "{{{2 iceberg
 "colorscheme iceberg
@@ -56,18 +60,27 @@ let g:airline_theme='gruvbox'
 "}}}2
 
 "{{{2 Material
-"let g:airline_theme='equinusocio_material'
-"let g:equinusocio_material_hide_vertsplit = 1
-"let g:equinusocio_material_darker = 1
+" valid values: 'default' (default), 'darker', 'pure'
+let g:equinusocio_material_style = 'darker'
 "colorscheme equinusocio_material
+
+" this theme has a buildin lightline/airline theme
+"let g:airline_theme = 'equinusocio_material'
 "let g:lightline = {
   "\ 'colorscheme': 'equinusocio_material',
   "\ }
+
+"let g:equinusocio_material_hide_vertsplit = 1
 "}}}2
 
 "{{{2 Nord
 "let g:nord_cursor_line_number_background = 1
 "let g:nord_italic_comments = 1
+"colorscheme nord
+"let g:airline_theme='nord'
+"let g:lightline = {
+  "\ 'colorscheme': 'equinusocio_material',
+  "\ }
 "}}}2
 "}}}1
 
@@ -84,10 +97,10 @@ nnoremap <A-Left> :tabprevious<CR>
 nnoremap <A-Right> :tabnext<CR>
 "}}}2
 "{{{2 Adjust splits
-noremap <silent> ˙ :vertical resize +3<CR>
-noremap <silent> ¬ :vertical resize -3<CR>
-noremap <silent> ˚ :resize +3<CR>
-noremap <silent> ∆ :resize +3<CR>
+noremap <silent> <M-S-k> :vertical resize +3<CR>
+noremap <silent> <M-S-j> :vertical resize -3<CR>
+noremap <silent> <M-S-h> :resize +3<CR>
+noremap <silent> <M-S-l> :resize +3<CR>
 "}}}2
 "{{{2 Switch split orientation
 map <Leader>th <C-w>t<C-w>H
@@ -113,6 +126,7 @@ let g:vimwiki_list = [
 "}}}1
 
 "{{{ Neovim settings
+
 " Folding
 set foldmethod=marker
 

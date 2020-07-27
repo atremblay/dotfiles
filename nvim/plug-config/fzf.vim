@@ -1,6 +1,6 @@
 
 
-nnoremap <C-p> :<C-u>FzfPreviewDirectoryFiles<CR>
+nnoremap <C-p> :<C-u>CocCommand fzf-preview.GitFiles<CR>
 nnoremap <C-b> :Buffers<CR>
 nnoremap <leader>g :Rg<CR>
 nnoremap <leader>m :Marks<CR>

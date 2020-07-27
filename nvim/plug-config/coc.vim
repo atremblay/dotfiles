@@ -5,14 +5,17 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
+nnoremap <leader>pwd :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 let g:coc_global_extensions = [
     \"coc-python",
     \"coc-json",
+    \"coc-yaml",
     \"coc-html",
     \"coc-css",
     \"coc-snippets",
-    \"coc-git"
+    \"coc-git",
+    \"coc-fzf-preview"
 \]
 
 inoremap <silent><expr> <TAB>
