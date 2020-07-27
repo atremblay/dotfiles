@@ -54,6 +54,14 @@ colorscheme gruvbox
 set background=dark
 "}}}2
 
+"{{{2 Two Firewatch
+"set background=dark " or light if you prefer the light version
+"let g:two_firewatch_italics=1
+"colorscheme two-firewatch
+
+"let g:airline_theme='twofirewatch'
+"}}}2
+
 "{{{2 iceberg
 "colorscheme iceberg
 "let g:airline_theme='iceberg'

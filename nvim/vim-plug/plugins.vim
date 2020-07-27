@@ -25,6 +25,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'aditya-azad/candle-grey'
 Plug 'chuling/equinusocio-material.vim'
+Plug 'rakr/vim-two-firewatch'
 
 " Git
 Plug 'tpope/vim-fugitive'
