@@ -12,7 +12,7 @@ scrolling:
   # Specifying '0' will disable scrolling.
   history: 100000
   multiplier: 3
-background_opacity: 0.97
+background_opacity: 0.99
 #}}}
 font:
   normal:
@@ -63,7 +63,8 @@ colors:
   # Default colors
   primary:
     # hard contrast: background = '#1d2021'
-    background: '#282828'
+    # normal contrast: background = '#282828'
+    background: '#1d2021'
     # soft contrast: background = '#32302f'
     foreground: '#ebdbb2'
 
