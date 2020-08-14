@@ -27,8 +27,8 @@ endif
 
 "{{{1 Theme stuff
 if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
 syntax enable
@@ -39,19 +39,19 @@ if (has("nvim"))
 endif
 
 "{{{2 ayu
-" valid values: mirage, light, dark 
-"let ayucolor="dark"
-"colorscheme ayu
-" valid values: ayu_mirage, ayu_light, ayu_dark 
-"let g:airline_theme='ayu_dark'
+ "valid values: mirage, light, dark 
+let ayucolor="dark"
+colorscheme ayu
+ "valid values: ayu_mirage, ayu_light, ayu_dark 
+let g:airline_theme='ayu_dark'
 "}}}2
 
 "{{{2 Gruvbox
-let g:airline_theme='gruvbox'
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_invert_selection='0'
-colorscheme gruvbox
-set background=dark
+"let g:airline_theme='gruvbox'
+"let g:gruvbox_contrast_dark='hard'
+"let g:gruvbox_invert_selection='0'
+"colorscheme gruvbox
+"set background=dark
 "}}}2
 
 "{{{2 Two Firewatch
@@ -69,7 +69,7 @@ set background=dark
 
 "{{{2 Material
 " valid values: 'default' (default), 'darker', 'pure'
-let g:equinusocio_material_style = 'darker'
+"let g:equinusocio_material_style = 'darker'
 "colorscheme equinusocio_material
 
 " this theme has a buildin lightline/airline theme
@@ -81,14 +81,15 @@ let g:equinusocio_material_style = 'darker'
 "let g:equinusocio_material_hide_vertsplit = 1
 "}}}2
 
-"{{{2 Nord
-"let g:nord_cursor_line_number_background = 1
-"let g:nord_italic_comments = 1
-"colorscheme nord
-"let g:airline_theme='nord'
-"let g:lightline = {
-  "\ 'colorscheme': 'equinusocio_material',
-  "\ }
+"{{{2 Ci Dark
+"syntax on
+"set termguicolors
+"colorscheme ci_dark
+
+"set fillchars+=vert:│
+
+"let g:airline_theme = 'ci_dark'
+"let g:lightline = {'colorscheme': 'ci_dark'}
 "}}}2
 "}}}1
 
