@@ -42,3 +42,10 @@ if [ -e $HOME/.config/alacritty/alacritty.yml ]; then
     mv $HOME/.config/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml.old
 fi
 ln -s $HOME/dotfiles/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+
+mkdir -p $HOME/.config/kitty/
+if [ -e $HOME/.config/kitty/kitty.yml ]; then
+    echo "Moving old \$HOME/.config/kitty/kitty.yml to \$HOME/.config/kitty/kitty.yml.old"
+    mv $HOME/.config/kitty/kitty.yml $HOME/.config/kitty/kitty.yml.old
+fi
+ln -s $HOME/dotfiles/kitty/kitty.yml $HOME/.config/kitty/kitty.yml

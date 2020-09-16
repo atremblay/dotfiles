@@ -38,59 +38,8 @@ if (has("nvim"))
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
 
-"{{{2 ayu
- "valid values: mirage, light, dark 
-let ayucolor="dark"
-colorscheme ayu
- "valid values: ayu_mirage, ayu_light, ayu_dark 
-let g:airline_theme='ayu_dark'
-"}}}2
-
-"{{{2 Gruvbox
-"let g:airline_theme='gruvbox'
-"let g:gruvbox_contrast_dark='hard'
-"let g:gruvbox_invert_selection='0'
-"colorscheme gruvbox
-"set background=dark
-"}}}2
-
-"{{{2 Two Firewatch
-"set background=dark " or light if you prefer the light version
-"let g:two_firewatch_italics=1
-"colorscheme two-firewatch
-
-"let g:airline_theme='twofirewatch'
-"}}}2
-
-"{{{2 iceberg
-"colorscheme iceberg
-"let g:airline_theme='iceberg'
-"}}}2
-
-"{{{2 Material
-" valid values: 'default' (default), 'darker', 'pure'
-"let g:equinusocio_material_style = 'darker'
-"colorscheme equinusocio_material
-
-" this theme has a buildin lightline/airline theme
-"let g:airline_theme = 'equinusocio_material'
-"let g:lightline = {
-  "\ 'colorscheme': 'equinusocio_material',
-  "\ }
-
-"let g:equinusocio_material_hide_vertsplit = 1
-"}}}2
-
-"{{{2 Ci Dark
-"syntax on
-"set termguicolors
-"colorscheme ci_dark
-
-"set fillchars+=vert:│
-
-"let g:airline_theme = 'ci_dark'
-"let g:lightline = {'colorscheme': 'ci_dark'}
-"}}}2
+" Go in that config file to change the theme
+source $HOME/.config/nvim/themes/themes.vim
 "}}}1
 
 "{{{ Splits and tabs

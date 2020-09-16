@@ -47,6 +47,7 @@ Plug 'mattn/calendar-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
+Plug 'airblade/vim-rooter'
 
 " LaTeX
 Plug 'lervag/vimtex'
