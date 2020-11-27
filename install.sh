@@ -44,8 +44,25 @@ fi
 ln -s $HOME/dotfiles/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 
 mkdir -p $HOME/.config/kitty/
-if [ -e $HOME/.config/kitty/kitty.yml ]; then
-    echo "Moving old \$HOME/.config/kitty/kitty.yml to \$HOME/.config/kitty/kitty.yml.old"
-    mv $HOME/.config/kitty/kitty.yml $HOME/.config/kitty/kitty.yml.old
+for file in kitty ayu nord gruvbox
+do
+    if [ -e $HOME/.config/kitty/$file.conf ]; then
+        echo "Moving old \$HOME/.config/kitty/$file.conf to \$HOME/.config/kitty/$file.conf.old"
+        mv $HOME/.config/kitty/$file.conf $HOME/.config/kitty/$file.conf.old
+    fi
+    ln -s $HOME/dotfiles/kitty/$file.conf $HOME/.config/kitty/$file.conf
+done
+
+mkdir -p $HOME/.config/yabai/
+if [ -e $HOME/.config/yabai/yabairc ]; then
+    echo "Moving old \$HOME/.config/yabai/yabairc to \$HOME/.config/yabai/yabairc.old"
+    mv $HOME/.config/yabai/yabairc $HOME/.config/yabai/yabairc.old
 fi
-ln -s $HOME/dotfiles/kitty/kitty.yml $HOME/.config/kitty/kitty.yml
+ln -s $HOME/dotfiles/yabai/yabairc $HOME/.config/yabai/yabairc
+
+mkdir -p $HOME/.config/skhd/
+if [ -e $HOME/.config/skhd/skhdrc ]; then
+    echo "Moving old \$HOME/.config/skhd/skhdrc to \$HOME/.config/skhd/skhdrc.old"
+    mv $HOME/.config/skhd/skhdrc $HOME/.config/skhd/skhdrc.old
+fi
+ln -s $HOME/dotfiles/skhd/skhdrc $HOME/.config/skhd/skhdrc
