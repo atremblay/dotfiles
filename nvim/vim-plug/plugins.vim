@@ -28,6 +28,8 @@ Plug 'chuling/equinusocio-material.vim'
 Plug 'rakr/vim-two-firewatch'
 Plug 'chuling/ci_dark'
 Plug 'luochen1990/rainbow'
+Plug 'co1ncidence/gunmetal.vim'
+Plug 'habamax/vim-gruvbit'
 
 " Git
 Plug 'tpope/vim-fugitive'
