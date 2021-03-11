@@ -10,6 +10,8 @@ source $HOME/.config/nvim/plug-config/ultisnips.vim
 source $HOME/.config/nvim/plug-config/which-key.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
 
+
+
 "{{{ Basic remapping
 imap jk <Esc>
 imap kj <Esc>
@@ -76,8 +78,7 @@ map <F2> :NERDTreeToggle<CR>
 let g:airline_section_b=''
 
 let g:vimwiki_list = [
-    \{'path':'~/vimwiki/friday', 'syntax': 'markdown', 'ext': '.md'},
-    \{'path':'~/vimwiki/explorance', 'syntax': 'markdown', 'ext': '.md'},
+    \{'path':'~/Documents/Explorance/vimwiki', 'syntax': 'markdown', 'ext': '.md'},
     \{'path':'~/vimwiki/personal', 'syntax': 'markdown', 'ext': '.md'}
 \]
 :nmap <Leader>w <Plug>VimwikiIndex
@@ -139,3 +140,5 @@ set nohlsearch
 filetype plugin on
 "}}}
 
+lua require'nvim-treesitter.configs'.setup {highlight = {enable = true } }
+lua require('lspconfig').pyls.setup{}
