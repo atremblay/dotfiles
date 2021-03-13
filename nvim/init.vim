@@ -141,4 +141,4 @@ filetype plugin on
 "}}}
 
 lua require'nvim-treesitter.configs'.setup {highlight = {enable = true } }
-lua require('lspconfig').pyls.setup{}
+"lua require('lspconfig').pyls.setup{}

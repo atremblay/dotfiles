@@ -1,5 +1,5 @@
 {
-    "python.jediEnabled":true,
+    "python.jediEnabled":false,
     "python.linting.enabled": true,
     "python.linting.pylintArgs": ["--rcfile", "~/.pylintrc", "-d", "C0411"],
     "python.formatting.provider": "black",
@@ -7,8 +7,8 @@
     "python.linting.pylintUseMinimalCheckers": false,
     "python.linting.pylintPath": "pylint",
     "python.condaPath": "conda",
-    "python.sortImports.args": ["-sp", ".isort.cfg"],
-    "python.sortImports.path": "/home/alexis/workspace/ejc/venv/bin/isort",
+    "python.sortImports.args": ["--sp", "/home/alexis/.isort.cfg"],
+    "python.sortImports.path": "/home/alexis/miniconda3/envs/neovim/bin/isort",
     "coc.preferences.formatOnSaveFiletypes": ["python"],
     "markdownlint.onChange": true,
     "markdownlint.config": {"line_length": false}
