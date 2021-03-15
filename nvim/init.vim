@@ -2,13 +2,15 @@
 " The default binding for vim popup selection is <c-n> , <c-p> besides arrow key
 
 source $HOME/.config/nvim/vim-plug/plugins.vim
-source $HOME/.config/nvim/plug-config/coc.vim
+"source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/vimtest.vim
 source $HOME/.config/nvim/plug-config/ultisnips.vim
 source $HOME/.config/nvim/plug-config/which-key.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
+source $HOME/.config/nvim/plug-config/lsp-config.vim
+"luafile $HOME/.config/nvim/plug-config/compe-config.lua
 
 
 
@@ -141,4 +143,5 @@ filetype plugin on
 "}}}
 
 lua require'nvim-treesitter.configs'.setup {highlight = {enable = true } }
-"lua require('lspconfig').pyls.setup{}
+lua require'lspconfig'.pyls.setup {}
+
