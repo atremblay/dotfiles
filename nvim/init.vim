@@ -143,5 +143,18 @@ filetype plugin on
 "}}}
 
 lua require'nvim-treesitter.configs'.setup {highlight = {enable = true } }
-lua require'lspconfig'.pyls.setup {}
+lua << EOF
+local lsp=require('lspconfig')
+lsp.pyls.setup{
+    settings = {
+        plugins = {
+            pylint = {
+                enabled = true,
+                executable = 'pylint',
+                args={'--rcfile', '~/.pylintrc'}
+            }
+        }
+    }
+}
+EOF
 
