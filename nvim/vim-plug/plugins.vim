@@ -15,8 +15,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'liuchengxu/vim-which-key'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'neovim/nvim-lspconfig'
-Plug 'anott03/nvim-lspinstall'
+"Plug 'neovim/nvim-lspconfig'
+"Plug 'anott03/nvim-lspinstall'
 
 " theme
 Plug 'arcticicestudio/nord-vim'
@@ -51,7 +51,7 @@ Plug 'mattn/calendar-vim'
 " Fuzzy search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 Plug 'airblade/vim-rooter'
 
 " LaTeX
