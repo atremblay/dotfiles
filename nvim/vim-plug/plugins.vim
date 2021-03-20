@@ -17,6 +17,7 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "Plug 'neovim/nvim-lspconfig'
 "Plug 'anott03/nvim-lspinstall'
+"Plug 'hrsh7th/nvim-compe'
 
 " theme
 Plug 'arcticicestudio/nord-vim'
