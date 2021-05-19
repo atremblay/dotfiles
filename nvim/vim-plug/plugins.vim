@@ -6,7 +6,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
@@ -16,8 +16,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'liuchengxu/vim-which-key'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
-"Plug 'hrsh7th/nvim-compe'
+"Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-compe'
 Plug 'anott03/nvim-lspinstall'
+Plug 'a-vrma/black-nvim', {'do': ':UpdateRemotePlugins'}
 
 " theme
 Plug 'arcticicestudio/nord-vim'
@@ -32,8 +34,8 @@ Plug 'chuling/equinusocio-material.vim'
 Plug 'rakr/vim-two-firewatch'
 Plug 'chuling/ci_dark'
 Plug 'luochen1990/rainbow'
-Plug 'co1ncidence/gunmetal.vim'
 Plug 'habamax/vim-gruvbit'
+Plug 'sainnhe/edge'
 
 " Git
 Plug 'tpope/vim-fugitive'

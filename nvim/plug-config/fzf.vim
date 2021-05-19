@@ -8,8 +8,8 @@ let g:fzf_action = {
 
 
 " see https://github.com/yuki-ycino/fzf-preview.vim for more option
-nnoremap <C-p> :<C-u>CocCommand fzf-preview.GitFiles<CR>
-nnoremap <leader>df :<C-u>CocCommand fzf-preview.DirectoryFiles<CR>
+nnoremap <C-p> :FzfPreviewGitFiles<CR>
+nnoremap <leader>df :FzfPreviewDirectoryFiles<CR>
 
 " provided by the fzf plugin
 nnoremap <C-b> :Buffers<CR>

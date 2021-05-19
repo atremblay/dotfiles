@@ -10,7 +10,8 @@ source $HOME/.config/nvim/plug-config/ultisnips.vim
 source $HOME/.config/nvim/plug-config/which-key.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/plug-config/lsp-config.vim
-"luafile $HOME/.config/nvim/plug-config/compe-config.lua
+luafile $HOME/.config/nvim/lua/compe-config.lua
+luafile $HOME/.config/nvim/lua/nvim-lspconfig.lua
 
 
 
@@ -85,9 +86,16 @@ let g:vimwiki_list = [
 \]
 :nmap <Leader>w <Plug>VimwikiIndex
 
+let g:black#settings = {
+    \ 'fast': 1,
+    \ 'line_length': 88
+\}
+
 "}}}1
 
 "{{{ Neovim settings
+"set completeopt=menuone,noinsert,noselect
+"let g:completion_matching_strategy_list = ['exact', 'matching']
 
 " Folding
 set foldmethod=marker
@@ -133,7 +141,11 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix
 
 " Remove trailing white space in python files
-autocmd BufWritePre *.py :%s/\s\+$//e
+"autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre *.py call Black()
+nnoremap <buffer><silent> <c-q> <cmd>call Black()<cr>
+
+
 let g:python3_host_prog = $HOME."/miniconda3/envs/neovim/bin/python"
 
 " stop highlighting search
@@ -145,16 +157,32 @@ filetype plugin on
 lua require'nvim-treesitter.configs'.setup {highlight = {enable = true } }
 lua << EOF
 local lsp=require('lspconfig')
-lsp.pyls.setup{
+lsp.pyright.setup{
     settings = {
-        plugins = {
-            pylint = {
-                enabled = true,
-                executable = 'pylint',
-                args={'--rcfile', '~/.pylintrc'}
-            }
-        }
-    }
+        python = {
+            formatting = {
+                provider = 'black',
+                blackPath = '~/miniconda3/envs/neovim/bin/black'
+            },
+            linting = {
+                pylintEnabled = true,
+                pylintArgs = {'--rcfile', '~/.pylintrc'},
+                pylintPath = 'pylint'
+            },
+        },
+    },
 }
 EOF
-
+"lsp.pyls.setup{
+    "settings = {
+        "pyls = {
+            "plugins = {
+                "pylint = {
+                    "enabled = true,
+                    "executable = 'pylint',
+                    "args={'--rcfile', '~/.pylintrc'}
+                "}
+            "}
+        "}
+    "}
+"}
