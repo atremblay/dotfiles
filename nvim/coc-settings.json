@@ -7,8 +7,8 @@
     "python.linting.pylintUseMinimalCheckers": false,
     "python.linting.pylintPath": "pylint",
     "python.condaPath": "conda",
-    "python.sortImports.args": ["--sp", "/home/alexis/.isort.cfg"],
-    "python.sortImports.path": "/home/alexis/miniconda3/envs/neovim/bin/isort",
+    "python.sortImports.args": ["-sp", ".isort.cfg"],
+    "python.sortImports.path": "~/miniconda3/envs/neovim/bin/isort",
     "coc.preferences.formatOnSaveFiletypes": ["python"],
     "suggest.completionItemKindLabels": {
         "method": "  ",

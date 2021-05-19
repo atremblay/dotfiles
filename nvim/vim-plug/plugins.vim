@@ -16,7 +16,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'liuchengxu/vim-which-key'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
-"Plug 'nvim-lua/completion-nvim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'anott03/nvim-lspinstall'
 Plug 'a-vrma/black-nvim', {'do': ':UpdateRemotePlugins'}

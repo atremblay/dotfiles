@@ -8,7 +8,7 @@ nmap <leader>rn <Plug>(coc-rename)
 nnoremap <leader>pwd :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 let g:coc_global_extensions = [
-    \"coc-python",
+    \"coc-pyright",
     \"coc-json",
     \"coc-yaml",
     \"coc-html",
