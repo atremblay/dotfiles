@@ -35,6 +35,8 @@ Plug 'chuling/ci_dark'
 Plug 'luochen1990/rainbow'
 Plug 'habamax/vim-gruvbit'
 Plug 'sainnhe/edge'
+Plug 'kyazdani42/blue-moon'
+Plug 'sainnhe/sonokai'
 
 " Git
 Plug 'tpope/vim-fugitive'
