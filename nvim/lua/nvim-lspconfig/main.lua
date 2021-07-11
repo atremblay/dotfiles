@@ -78,6 +78,23 @@ local on_attach = function(client, bufnr)
   
 end
 
+-- Setup LSP config
+nvim_lsp.pyright.setup{
+    settings = {
+        python = {
+            formatting = {
+                provider = 'black',
+                blackPath = '~/miniconda3/envs/neovim/bin/black'
+            },
+            linting = {
+                pylintEnabled = true,
+                pylintArgs = {'--rcfile', '~/.pylintrc'},
+                pylintPath = 'pylint'
+            },
+        },
+    },
+}
+
 -- Enable the following language servers
 local servers = { 'pyright'}
 for _, lsp in ipairs(servers) do

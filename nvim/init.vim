@@ -154,22 +154,6 @@ filetype plugin on
 
 lua << EOF
 
-local lsp=require('lspconfig')
-lsp.pyright.setup{
-    settings = {
-        python = {
-            formatting = {
-                provider = 'black',
-                blackPath = '~/miniconda3/envs/neovim/bin/black'
-            },
-            linting = {
-                pylintEnabled = true,
-                pylintArgs = {'--rcfile', '~/.pylintrc'},
-                pylintPath = 'pylint'
-            },
-        },
-    },
-}
 require('compe-config/main')
 require('nvim-lspconfig/main')
 require'nvim-treesitter.configs'.setup {highlight = {enable = true } }
