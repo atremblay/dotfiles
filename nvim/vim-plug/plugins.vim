@@ -58,6 +58,12 @@ Plug 'airblade/vim-rooter'
 
 " LaTeX
 Plug 'lervag/vimtex'
+
+
+" testing these out
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 " Automatically install missing plugins on startup
