@@ -1,6 +1,7 @@
 
 local nvim_lsp = require('lspconfig')
-local on_attach = function(_client, bufnr)
+local protocol = require'vim.lsp.protocol'
+local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   local opts = { noremap=true, silent=true }
@@ -20,7 +21,79 @@ local on_attach = function(_client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  protocol.CompletionItemKind = {
+    '', -- Text
+    '', -- Method
+    '', -- Function
+    '', -- Constructor
+    '', -- Field
+    '', -- Variable
+    '', -- Class
+    'ﰮ', -- Interface
+    '', -- Module
+    '', -- Property
+    '', -- Unit
+    '', -- Value
+    '', -- Enum
+    '', -- Keyword
+    '﬌', -- Snippet
+    '', -- Color
+    '', -- File
+    '', -- Reference
+    '', -- Folder
+    '', -- EnumMember
+    '', -- Constant
+    '', -- Struct
+    '', -- Event
+    'ﬦ', -- Operator
+    '', -- TypeParameter
+  }
+  --protocol.CompletionItemKind = {
+    --'', -- Text
+    --'', -- Method
+    --'', -- Function
+    --' ', -- Constructor
+    --'', -- Field
+    --'[]', -- Variable
+    --'', -- Class
+    --'蘒', -- Interface
+    --'', -- Module
+    --'', -- Property
+    --'', -- Unit
+    --'', -- Value
+    --'', -- Enum
+    --'', -- Keyword
+    --'﬌', -- Snippet
+    --'', -- Color
+    --'', -- File
+    --'', -- Reference
+    --'', -- Folder
+    --'', -- EnumMember
+    --'', -- Constant
+    --'', -- Struct
+    --'', -- Event
+    --'ﬦ', -- Operator
+    --'<>', -- TypeParameter
+  --}
+  
 end
+
+-- Setup LSP config
+nvim_lsp.pyright.setup{
+    settings = {
+        python = {
+            formatting = {
+                provider = 'black',
+                blackPath = '~/miniconda3/envs/neovim/bin/black'
+            },
+            linting = {
+                pylintEnabled = true,
+                pylintArgs = {'--rcfile', '~/.pylintrc'},
+                pylintPath = 'pylint'
+            },
+        },
+    },
+}
 
 -- Enable the following language servers
 local servers = { 'pyright'}
