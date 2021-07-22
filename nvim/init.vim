@@ -9,9 +9,8 @@ source $HOME/.config/nvim/plug-config/vimtest.vim
 source $HOME/.config/nvim/plug-config/ultisnips.vim
 source $HOME/.config/nvim/plug-config/which-key.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
-source $HOME/.config/nvim/plug-config/lsp-config.vim
-luafile $HOME/.config/nvim/lua/compe-config.lua
-luafile $HOME/.config/nvim/lua/nvim-lspconfig.lua
+source $HOME/.config/nvim/plug-config/telescope.vim
+"source $HOME/.config/nvim/plug-config/lsp-config.vim
 
 
 
@@ -154,24 +153,11 @@ set nohlsearch
 filetype plugin on
 "}}}
 
-lua require'nvim-treesitter.configs'.setup {highlight = {enable = true } }
 lua << EOF
-local lsp=require('lspconfig')
-lsp.pyright.setup{
-    settings = {
-        python = {
-            formatting = {
-                provider = 'black',
-                blackPath = '~/miniconda3/envs/neovim/bin/black'
-            },
-            linting = {
-                pylintEnabled = true,
-                pylintArgs = {'--rcfile', '~/.pylintrc'},
-                pylintPath = 'pylint'
-            },
-        },
-    },
-}
+
+require('compe-config/main')
+require('nvim-lspconfig/main')
+require'nvim-treesitter.configs'.setup {highlight = {enable = true } }
 EOF
 "lsp.pyls.setup{
     "settings = {

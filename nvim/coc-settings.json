@@ -1,13 +1,14 @@
 {
     "python.jediEnabled":false,
     "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
     "python.linting.pylintArgs": ["--rcfile", "~/.pylintrc", "-d", "C0411"],
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "~/miniconda3/envs/neovim/bin/black",
     "python.linting.pylintUseMinimalCheckers": false,
     "python.linting.pylintPath": "pylint",
     "python.condaPath": "conda",
-    "python.sortImports.args": ["-sp", ".isort.cfg"],
+    "python.sortImports.args": ["--sp", "/home/alexis/.isort.cfg"],
     "python.sortImports.path": "~/miniconda3/envs/neovim/bin/isort",
     "coc.preferences.formatOnSaveFiletypes": ["python"],
     "suggest.completionItemKindLabels": {
