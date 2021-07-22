@@ -9,6 +9,7 @@ source $HOME/.config/nvim/plug-config/vimtest.vim
 source $HOME/.config/nvim/plug-config/ultisnips.vim
 source $HOME/.config/nvim/plug-config/which-key.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
+source $HOME/.config/nvim/plug-config/telescope.vim
 "source $HOME/.config/nvim/plug-config/lsp-config.vim
 
 
