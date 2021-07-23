@@ -35,6 +35,8 @@ Plug 'chuling/ci_dark'
 Plug 'luochen1990/rainbow'
 Plug 'habamax/vim-gruvbit'
 Plug 'sainnhe/edge'
+Plug 'kyazdani42/blue-moon'
+Plug 'sainnhe/sonokai'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -64,6 +66,7 @@ Plug 'lervag/vimtex'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 call plug#end()
 
 " Automatically install missing plugins on startup

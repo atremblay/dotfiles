@@ -3,7 +3,7 @@
 
 source $HOME/.config/nvim/vim-plug/plugins.vim
 "source $HOME/.config/nvim/plug-config/coc.vim
-source $HOME/.config/nvim/plug-config/fzf.vim
+"source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/vimtest.vim
 source $HOME/.config/nvim/plug-config/ultisnips.vim
@@ -23,6 +23,8 @@ nmap <leader>b o<Esc>k
 " Mapping to delete in the 'black hole' registry
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
+
+nnoremap <Leader><CR> :so $MYVIMRC<CR>
 
 if has('nvim')
     tnoremap jk <C-\><C-n>
@@ -154,9 +156,6 @@ filetype plugin on
 "}}}
 
 lua << EOF
-
-require('compe-config/main')
-require('nvim-lspconfig/main')
 require'nvim-treesitter.configs'.setup {highlight = {enable = true } }
 EOF
 "lsp.pyls.setup{

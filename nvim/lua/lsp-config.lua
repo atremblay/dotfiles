@@ -3,6 +3,7 @@ local nvim_lsp = require('lspconfig')
 local protocol = require'vim.lsp.protocol'
 local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  capabilities.textDocument.completion.completionItem.snippetSupport = true
 
   local opts = { noremap=true, silent=true }
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
