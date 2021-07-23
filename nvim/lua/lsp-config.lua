@@ -49,24 +49,19 @@ local on_attach = function(client, bufnr)
     'ﬦ', -- Operator
     '', -- TypeParameter
   }
-  
 end
 
 -- Setup LSP config
 nvim_lsp.pyright.setup{
-    settings = {
-        python = {
-            formatting = {
-                provider = 'black',
-                blackPath = '~/miniconda3/envs/neovim/bin/black'
-            },
-            linting = {
-                pylintEnabled = true,
-                pylintArgs = {'--rcfile', '~/.pylintrc'},
-                pylintPath = 'pylint'
-            },
-        },
-    },
+    --settings = {
+        --python = {
+            --linting = {
+                --pylintEnabled = true,
+                --pylintArgs = {'--rcfile', '~/.pylintrc'},
+                --pylintPath = 'pylint'
+            --},
+        --},
+    --},
 }
 
 -- Enable the following language servers
