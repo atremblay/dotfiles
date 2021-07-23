@@ -66,6 +66,7 @@ Plug 'lervag/vimtex'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 call plug#end()
 
 " Automatically install missing plugins on startup
