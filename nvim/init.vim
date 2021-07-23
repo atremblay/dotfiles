@@ -155,9 +155,9 @@ set nohlsearch
 filetype plugin on
 "}}}
 
-lua << EOF
-require'nvim-treesitter.configs'.setup {highlight = {enable = true } }
-EOF
+lua require('lua-config')
+lua require('nvim-treesitter.configs').setup {highlight = {enable = true } }
+
 "lsp.pyls.setup{
     "settings = {
         "pyls = {
