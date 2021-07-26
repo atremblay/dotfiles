@@ -10,6 +10,7 @@ source $HOME/.config/nvim/plug-config/ultisnips.vim
 source $HOME/.config/nvim/plug-config/which-key.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
+source $HOME/.config/nvim/plug-config/nerd-commenter.vim
 "source $HOME/.config/nvim/plug-config/lsp-config.vim
 
 
@@ -152,11 +153,13 @@ let g:python3_host_prog = $HOME."/miniconda3/envs/neovim/bin/python"
 " stop highlighting search
 set nohlsearch
 
+" Mostly for NERDCommenter
 filetype plugin on
 "}}}
 
 lua require('lua-config')
 lua require('nvim-treesitter.configs').setup {highlight = {enable = true } }
+
 
 "lsp.pyls.setup{
     "settings = {
