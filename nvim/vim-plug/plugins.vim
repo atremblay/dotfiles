@@ -67,6 +67,8 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
+Plug 's1n7ax/nvim-comment-frame'
 call plug#end()
 
 " Automatically install missing plugins on startup
