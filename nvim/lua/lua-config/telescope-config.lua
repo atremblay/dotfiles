@@ -6,6 +6,8 @@ require('telescope').setup {
         prompt_prefix = '> ',
         color_devicons = true,
 
+        sorting_strategy = "ascending",
+
         file_previewer = require('telescope.previewers').vim_buffer_cat.new,
         grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
         qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
@@ -20,7 +22,7 @@ require('telescope').setup {
         layout_strategy = 'horizontal',
         layout_config = {
             horizontal = {
-                prompt_position = 'bottom',
+                prompt_position = 'top',
             }
         }
     },
