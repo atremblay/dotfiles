@@ -63,6 +63,10 @@ nvim_lsp.pyright.setup{
         },
     },
 }
+--for key, val in pairs(require('lspconfig/configs')['pyright']['document_config']['default_config']['settings']['python']['analysis']) do
+    --print('key', key)
+    --print(val)
+--end
 
 -- Enable the following language servers
 local servers = { 'pyright'}

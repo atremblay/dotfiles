@@ -160,7 +160,6 @@ filetype plugin on
 lua require('lua-config')
 lua require('nvim-treesitter.configs').setup {highlight = {enable = true } }
 
-
 "lsp.pyls.setup{
     "settings = {
         "pyls = {

@@ -40,7 +40,7 @@ Plug 'sainnhe/sonokai'
 
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 
 " Utils
 Plug 'ryanoasis/vim-devicons'
@@ -67,6 +67,9 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
+Plug 'ray-x/lsp_signature.nvim'
+Plug 'lewis6991/gitsigns.nvim', {'branch': 'main'}
 
 Plug 's1n7ax/nvim-comment-frame'
 call plug#end()
