@@ -49,30 +49,26 @@ local on_attach = function(client, bufnr)
     'ﬦ', -- Operator
     '', -- TypeParameter
   }
+
 end
 
--- Setup LSP config
-nvim_lsp.pyright.setup{
-    settings = {
-        python = {
-            linting = {
-                pylintEnabled = true,
-                pylintArgs = {'--rcfile', '~/.pylintrc'},
-                pylintPath = 'pylint'
-            },
-        },
-    },
-}
---for key, val in pairs(require('lspconfig/configs')['pyright']['document_config']['default_config']['settings']['python']['analysis']) do
-    --print('key', key)
-    --print(val)
---end
 
 -- Enable the following language servers
-local servers = { 'pyright'}
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
-end
+--local servers = { 'pyright'}
+--for _, lsp in ipairs(servers) do
+  --nvim_lsp[lsp].setup { on_attach = on_attach }
+--end
+
+require'lspconfig'.pyright.setup{
+  on_attach = on_attach,
+  settings = {
+      pyright = {
+        reportOptionalMemberAccess=false,
+        reportUnknownMemberType=false,
+        reportOptionalMemberAccess=false,
+      }
+  },
+}
 
 -- Map :Format to vim.lsp.buf.formatting()
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
