@@ -1,11 +1,11 @@
-nmap <leader>dn <Plug>vimspector#StepOver
-nmap <leader>di <Plug>vimspector#StepInto
-nmap <leader>do <Plug>vimspector#StepOut
+nmap <leader>dn :call vimspector#StepOver()<cr>
+nmap <leader>di :call vimspector#StepInto()<cr>
+nmap <leader>do :call vimspector#StepOut()<cr>
 
-nnoremap <leader>dc :call vimspector#Continue()
-nnoremap <leader>ddb :call vimspector#Clearreakpoints()
+nnoremap <leader>dc :call vimspector#Continue()<cr>
+nnoremap <leader>ddb :call vimspector#Clearreakpoints()<cr>
 
-nmap <leader>dr <Plug>vimspector#Restart
-nmap <leader>drc <Plug>vimspector#RunToCursor
-nmap <leader>db <Plug>vimspector#ToggleBreakPoint
-nmap <leader>dcb <Plug>vimspector#ToggleConditionalBreakPoint
+nmap <leader>dr :call vimspector#Restart()<cr>
+nmap <leader>drc :call vimspector#RunToCursor()<cr>
+nmap <leader>db :call vimspector#ToggleBreakpoint()<cr>
+nmap <leader>dcb :call vimspector#ToggleConditionalBreakPoint()<cr>

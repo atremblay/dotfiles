@@ -50,6 +50,7 @@ local on_attach = function(client, bufnr)
     '', -- TypeParameter
   }
 
+  require "lsp_signature".on_attach()
 end
 
 
