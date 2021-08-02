@@ -15,10 +15,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'liuchengxu/vim-which-key'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
-Plug 'anott03/nvim-lspinstall'
 Plug 'a-vrma/black-nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim', {'branch': 'main'}
+Plug 'anott03/nvim-lspinstall'
 
 " theme
 Plug 'arcticicestudio/nord-vim'
@@ -49,7 +53,7 @@ Plug 'janko/vim-test'
 Plug 'tpope/vim-projectionist'
 Plug 'puremourning/vimspector'
 Plug 'tmhedberg/SimpylFold'
-Plug 'vimwiki/vimwiki'
+"Plug 'vimwiki/vimwiki'
 Plug 'mattn/calendar-vim'
 
 " Fuzzy search
@@ -68,10 +72,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
-Plug 'ray-x/lsp_signature.nvim'
 Plug 'lewis6991/gitsigns.nvim', {'branch': 'main'}
 
-Plug 's1n7ax/nvim-comment-frame'
+Plug 's1n7ax/nvim-comment-frame', {'branch': 'main'}
 call plug#end()
 
 " Automatically install missing plugins on startup
