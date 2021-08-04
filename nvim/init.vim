@@ -21,6 +21,28 @@ imap kj <Esc>
 nmap <leader>a O<Esc>j
 nmap <leader>b o<Esc>k
 
+" Make Y behave like it's supposed to
+nnoremap Y y$
+
+" Keep cursor centered when searching things
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Add additional undo points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+" Nice remap to move lines around
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc>:m .+1<CR>==
+inoremap <C-k> <esc>:m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+
 " Mapping to delete in the 'black hole' registry
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
@@ -142,6 +164,11 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set fileformat=unix
 
+au BufNewFile,BufRead *.yaml
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4
+
 " Remove trailing white space in python files
 "autocmd BufWritePre *.py :%s/\s\+$//e
 autocmd BufWritePre *.py call Black()
@@ -160,17 +187,3 @@ filetype plugin on
 lua require('lua-config')
 lua require('nvim-treesitter.configs').setup {highlight = {enable = true } }
 
-"lsp.pyls.setup{
-    "settings = {
-        "pyls = {
-            "plugins = {
-                "pylint = {
-                    "enabled = true,
-                    "executable = 'pylint',
-                    "args={'--rcfile', '~/.pylintrc'}
-                "}
-            "}
-        "}
-    "}
-"}
-"EOF
