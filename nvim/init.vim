@@ -87,10 +87,10 @@ nnoremap <A-Left> :tabprevious<CR>
 nnoremap <A-Right> :tabnext<CR>
 "}}}2
 "{{{2 Adjust splits
-noremap <silent> <M-S-k> :vertical resize +3<CR>
-noremap <silent> <M-S-j> :vertical resize -3<CR>
-noremap <silent> <M-S-h> :resize +3<CR>
-noremap <silent> <M-S-l> :resize +3<CR>
+nnoremap <silent> <A-C-k> :vertical resize +3<CR>
+nnoremap <silent> <A-C-j> :vertical resize -3<CR>
+nnoremap <silent> <A-C-h> :resize +3<CR>
+nnoremap <silent> <A-C-l> :resize -3<CR>
 "}}}2
 "{{{2 Switch split orientation
 map <Leader>th <C-w>t<C-w>H

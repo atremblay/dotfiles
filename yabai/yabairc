@@ -16,3 +16,8 @@ yabai -m config right_padding                3
 yabai -m config window_gap                   3
 
 #yabai -m config mouse_follows_focus on
+
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Préférences Système$" manage=off
+yabai -m rule --add app="^Wally$" manage=off
+yabai -m rule --add app="^1Password 7$" manage=off
