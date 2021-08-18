@@ -11,3 +11,4 @@ source $HOME/.config/nvim/themes/ayu.vim
 "source $HOME/.config/nvim/themes/gunmetal.vim
 "source $HOME/.config/nvim/themes/edge.vim
 "source $HOME/.config/nvim/themes/sonokai.vim
+"source $HOME/.config/nvim/themes/nightfox.vim

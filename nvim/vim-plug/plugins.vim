@@ -41,6 +41,7 @@ Plug 'habamax/vim-gruvbit'
 Plug 'sainnhe/edge'
 Plug 'kyazdani42/blue-moon'
 Plug 'sainnhe/sonokai'
+Plug 'EdenEast/nightfox.nvim'
 
 " Git
 Plug 'tpope/vim-fugitive'
