@@ -64,9 +64,10 @@ require'lspconfig'.pyright.setup{
   on_attach = on_attach,
   settings = {
       pyright = {
-        reportOptionalMemberAccess=false,
-        reportUnknownMemberType=false,
-        reportOptionalMemberAccess=false,
+        typeCheckingMode='off',
+        --reportOptionalMemberAccess=false,
+        --reportUnknownMemberType=false,
+        --reportOptionalMemberAccess=false,
       }
   },
 }

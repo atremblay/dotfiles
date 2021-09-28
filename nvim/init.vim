@@ -173,8 +173,8 @@ au BufNewFile,BufRead *.yaml
 
 " Remove trailing white space in python files
 "autocmd BufWritePre *.py :%s/\s\+$//e
-autocmd BufWritePre *.py call Black()
-nnoremap <buffer><silent> <c-q> <cmd>call Black()<cr>
+autocmd BufWritePre *.py call black#Black()
+"nnoremap <buffer><silent> <c-q> <cmd>call Black()<cr>
 
 
 let g:python3_host_prog = $HOME."/miniconda3/envs/neovim/bin/python"

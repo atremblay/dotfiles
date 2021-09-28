@@ -16,7 +16,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'liuchengxu/vim-which-key'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'hrsh7th/nvim-compe'
-Plug 'a-vrma/black-nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'psf/black', { 'branch': 'stable' }
+"Plug 'a-vrma/black-nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " LSP
