@@ -55,7 +55,7 @@ Plug 'janko/vim-test'
 Plug 'tpope/vim-projectionist'
 Plug 'puremourning/vimspector'
 Plug 'tmhedberg/SimpylFold'
-"Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'
 Plug 'mattn/calendar-vim'
 
 " Fuzzy search
