@@ -125,7 +125,7 @@ let g:black#settings = {
 
 " Folding
 set foldmethod=marker
-
+ 
 " Indentation
 set autoindent
 set smartindent
