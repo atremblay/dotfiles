@@ -10,12 +10,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+"Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'liuchengxu/vim-which-key'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'hrsh7th/nvim-compe'
 Plug 'psf/black', { 'branch': 'stable' }
 "Plug 'a-vrma/black-nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -24,6 +24,12 @@ Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim', {'branch': 'main'}
 Plug 'anott03/nvim-lspinstall'
+
+" Completion
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
+
 
 " theme
 Plug 'arcticicestudio/nord-vim'
