@@ -45,11 +45,6 @@ cmp.setup({
       { name = 'buffer' },
       { name = "latex_symbols" },
     }
-    })
-
-    -- Setup lspconfig.
-    require('lspconfig')['pyright'].setup {
-    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
+})
 
 

@@ -15,7 +15,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'liuchengxu/vim-which-key'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'psf/black', { 'branch': 'stable' }
+Plug 'psf/black', { 'branch': 'main' }
 "Plug 'a-vrma/black-nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'stsewd/isort.nvim', { 'do': ':UpdateRemotePlugins' }
 
