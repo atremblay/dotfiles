@@ -102,6 +102,7 @@ ctrl + cmd - 0 : yabai -m space --focus 10
 # change layout of desktop
 ctrl + alt - t : yabai -m space --layout bsp
 ctrl + alt - f : yabai -m space --layout float
+ctrl + alt - s : yabai -m space --layout stack
 
 
 # toggle window parent zoom
