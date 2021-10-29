@@ -32,6 +32,7 @@ cmp.setup({
       })
     },
     sources = {
+      { name = 'path' },
       { name = 'nvim_lsp' },
 
       -- For vsnip user.
