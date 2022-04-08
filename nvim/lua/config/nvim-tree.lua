@@ -36,10 +36,11 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 nvim_tree.setup {
   disable_netrw = true,
   hijack_netrw = true,
-  open_on_setup = false,
+  open_on_setup = true,
   actions = {
     open_file = {
       resize_window = true,
+      quit_on_open = true,
     },
   },
   ignore_ft_on_setup = {
@@ -49,10 +50,10 @@ nvim_tree.setup {
   },
   open_on_tab = false,
   hijack_cursor = false,
-  update_cwd = true,
+  update_cwd = false,
   update_to_buf_dir = {
     enable = true,
-    auto_open = true,
+    auto_open = false,
   },
   diagnostics = {
     enable = true,
@@ -82,6 +83,7 @@ nvim_tree.setup {
     timeout = 500,
   },
   view = {
+    preserve_window_proportions = false,
     width = 40,
     height = 30,
     hide_root_folder = false,

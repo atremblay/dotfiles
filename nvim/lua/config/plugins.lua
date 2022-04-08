@@ -128,8 +128,8 @@ return packer.startup(function(use)
   use 'vim-airline/vim-airline-themes'
   use 'liuchengxu/vim-which-key'
   use {
-    'stsewd/isort.nvim',    
-    run = ':UpdateRemoteuseins' 
+    'stsewd/isort.nvim',
+    run = ':UpdateRemoteuseins'
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
