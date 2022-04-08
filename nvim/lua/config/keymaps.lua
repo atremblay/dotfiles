@@ -88,3 +88,5 @@ keymap("v", "p", '"_dP', opts)
 
 -- Telescope to vimrc files
 keymap('n', '<leader>vrc', "<cmd>lua require('config/telescope').search_dotfiles()<cr>", opts)
+
+
