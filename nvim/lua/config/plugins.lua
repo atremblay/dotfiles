@@ -54,14 +54,13 @@ return packer.startup(function(use)
 
 
   -- Colorscheme
-  use 'shaunsingh/nord.nvim' 
-  use 'arcticicestudio/nord-vim'
+  use 'shaunsingh/nord.nvim'
   use 'cocopon/iceberg.vim'
   use 'ayu-theme/ayu-vim'
   use 'nanotech/jellybeans.vim'
   use 'gruvbox-community/gruvbox'
   use 'drewtempelmeyer/palenight.vim'
-  use 'edkolev/tmuxline.vim'
+  --use 'edkolev/tmuxline.vim'
   use 'aditya-azad/candle-grey'
   use 'chuling/equinusocio-material.vim'
   use 'rakr/vim-two-firewatch'
@@ -83,6 +82,7 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-nvim-lua'
   use 'kdheepak/cmp-latex-symbols'
   use 'quangnguyen30192/cmp-nvim-ultisnips'
+  use 'onsails/lspkind-nvim'
 
   -- snippets
   use 'L3MON4D3/LuaSnip'            -- snippet engine
@@ -108,8 +108,12 @@ return packer.startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter-textobjects' } -- More text motions
 
   -- nvim tree
-  use 'kyazdani42/nvim-web-devicons'
-  use 'kyazdani42/nvim-tree.lua'
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    },
+}
 
   -- Git
   use 'lewis6991/gitsigns.nvim'
@@ -124,12 +128,14 @@ return packer.startup(function(use)
   use 'tmhedberg/SimpylFold'
   use 'mattn/calendar-vim'
   use 'scrooloose/nerdcommenter'
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
   use 'liuchengxu/vim-which-key'
   use {
     'stsewd/isort.nvim',
     run = ':UpdateRemoteuseins'
+  }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
