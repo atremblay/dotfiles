@@ -11,6 +11,7 @@ o.completeopt = {
 } 
 o.clipboard = "unnamedplus"	              -- allows nvim to access sysyem clipboard
 o.relativenumber = true		              -- show relative line numbers
+o.number = true
 o.splitbelow = true                       -- force all horizontal splits to go below current window
 o.splitright = true                       -- force all vertical splits to go to the right of current window
 o.swapfile = true                        -- creates a swapfile
