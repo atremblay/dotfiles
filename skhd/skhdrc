@@ -13,6 +13,12 @@ shift + cmd - j : yabai -m window --swap south
 shift + cmd - k : yabai -m window --swap north
 shift + cmd - l : yabai -m window --swap east
 
+# Warp window
+ctrl + shift + cmd - h : yabai -m window --warp west
+ctrl + shift + cmd - j : yabai -m window --warp south
+ctrl + shift + cmd - k : yabai -m window --warp north
+ctrl + shift + cmd - l : yabai -m window --warp east
+
 # Focus the insert direction
 meh - h : yabai -m window --insert west
 meh - j : yabai -m window --insert south
@@ -40,13 +46,13 @@ shift + alt - s : yabai -m window --resize bottom:0:-20
 ctrl + cmd - u : yabai -m display --focus last
 ctrl + cmd - p : yabai -m display --focus first
 
-# make floating window fill screen
+# make **floating** window fill screen
 shift + alt - up : yabai -m window --grid 1:1:0:0:1:1
 
-# make floating window fill left-half of screen
+# make **floating** window fill left-half of screen
 shift + alt - left : yabai -m window --grid 1:2:0:0:1:1
  
-# make floating window fill right-half of screen
+# make **floating** window fill right-half of screen
 shift + alt - right : yabai -m window --grid 1:2:1:0:1:1
 
 # create desktop, move window and follow focus
@@ -108,8 +114,8 @@ ctrl + alt - s : yabai -m space --layout stack
 # toggle window parent zoom
 alt - b : yabai -m window --toggle zoom-parent
  
-# toggle window fullscreen zoom
-alt - f : yabai -m window --toggle zoom-fullscreen
+# toggle window floating in the middle
+alt - f : yabai -m window --toggle float;yabai -m window --grid 8:8:1:1:6:6 
  
 # toggle window native fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
