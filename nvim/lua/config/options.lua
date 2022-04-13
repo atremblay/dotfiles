@@ -39,3 +39,4 @@ o.sidescrolloff = 10                      -- same for sidescroll
 vim.g.python3_host_prog=os.getenv("HOME").."/miniconda3/envs/neovim/bin/python"
 
 vim.cmd [[set iskeyword+=-]]              -- let - be part of "words"
+vim.cmd [[ autocmd BufWritePre *.py call black#Black() ]]
