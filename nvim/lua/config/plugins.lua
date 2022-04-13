@@ -51,6 +51,7 @@ return packer.startup(function(use)
   use '9mm/vim-closer'
   use 'vimwiki/vimwiki'
   use 'ojroques/vim-oscyank'
+  use { 'psf/black', branch = 'main' }
 
 
   -- Colorscheme
@@ -122,7 +123,7 @@ return packer.startup(function(use)
   -- Utils
   use 'Xuyuanp/nerdtree-git-plugin'
   use 'ryanoasis/vim-devicons'
-  use 'janko/vim-test'
+  use 'vim-test/vim-test'
   use 'tpope/vim-projectionist'
   use 'puremourning/vimspector'
   use 'tmhedberg/SimpylFold'
