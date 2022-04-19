@@ -1,6 +1,6 @@
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
-local term_opts = {silent = true}
+local term_opts = { silent = true }
 -- shorthand
 local keymap = vim.api.nvim_set_keymap
 
@@ -69,9 +69,7 @@ keymap("n", "<C-H>", "<C-W><C-H>", opts)
 keymap("n", "<leader>f", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts)
 --keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = true }))<cr>", opts)
 keymap("n", "<leader>rg", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>", opts)
 keymap("n", "<C-b>", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
-
 
 -- Git
 keymap("n", "]g", "<cmd>Gitsigns next_hunk<cr>", opts)
@@ -82,11 +80,8 @@ keymap("n", "<leader>g", "<cmd>Gitsigns preview_hunk<cr>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
-
 -- stop yanking on paste in visual mode
 keymap("v", "p", '"_dP', opts)
 
 -- Telescope to vimrc files
-keymap('n', '<leader>vrc', "<cmd>lua require('config/telescope').search_dotfiles()<cr>", opts)
-
-
+keymap("n", "<leader>vrc", "<cmd>lua require('config/telescope').search_dotfiles()<cr>", opts)

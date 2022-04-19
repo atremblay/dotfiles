@@ -1,25 +1,23 @@
+require("nvim-comment-frame").setup({
 
-require('nvim-comment-frame').setup({
+	-- if true, <leader>cf keymap will be disabled
+	disable_default_keymap = false,
 
-    -- if true, <leader>cf keymap will be disabled
-    disable_default_keymap = false,
+	-- adds custom keymap
+	multiline_keymap = "<leader>C",
 
-    -- adds custom keymap
-    multiline_keymap = '<leader>C',
+	-- fill the comment frame border with this character
+	fill_char = "-",
 
+	-- width of the comment frame
+	frame_width = 70,
 
-    -- fill the comment frame border with this character
-    fill_char = '-',
+	-- wrap the line after 'n' characters
+	line_wrap_len = 66,
 
-    -- width of the comment frame
-    frame_width = 70,
+	-- automatically indent the comment frame based on the line
+	auto_indent = true,
 
-    -- wrap the line after 'n' characters
-    line_wrap_len = 66,
-
-    -- automatically indent the comment frame based on the line
-    auto_indent = true,
-
-    -- add comment above the current line
-    add_comment_above = true,
+	-- add comment above the current line
+	add_comment_above = true,
 })

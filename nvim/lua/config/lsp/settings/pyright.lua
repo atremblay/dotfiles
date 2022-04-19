@@ -1,12 +1,12 @@
 return {
-  settings = {
-    python = {
-      analysis = {
-        typeCheckingMode = "off"
-        --reportOptionalMemberAccess=false,
-        --reportUnknownMemberType=false,
-        --reportOptionalMemberAccess=false,
-      }
-    }
-  },
+	settings = {
+		python = {
+			analysis = {
+				typeCheckingMode = "off",
+				--reportOptionalMemberAccess=false,
+				--reportUnknownMemberType=false,
+				--reportOptionalMemberAccess=false,
+			},
+		},
+	},
 }

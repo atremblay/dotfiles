@@ -1,11 +1,13 @@
-
-vim.api.nvim_exec([[
-highlight! link pythonNone Blue
-highlight! link pythonExceptions Yellow
-highlight! link pythonExClass Green
-highlight! link pythonBuiltin White
-highlight! link pythonDecoratorName Aqua
-]], false)
+vim.api.nvim_exec(
+	[[
+    highlight! link pythonNone Blue
+    highlight! link pythonExceptions Yellow
+    highlight! link pythonExClass Green
+    highlight! link pythonBuiltin White
+    highlight! link pythonDecoratorName Aqua
+  ]],
+	false
+)
 
 vim.bo.shiftwidth = 4
 vim.bo.tabstop = 4
