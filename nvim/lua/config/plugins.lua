@@ -48,7 +48,7 @@ return packer.startup(function(use)
 	-- Utils
 	use("tpope/vim-commentary")
 	use("tpope/vim-surround")
-	use("9mm/vim-closer")
+	use("rstacruz/vim-closer")
 	use("vimwiki/vimwiki")
 	use("ojroques/vim-oscyank")
 	--use { 'psf/black', branch = 'main' }
@@ -95,6 +95,10 @@ return packer.startup(function(use)
 	use("williamboman/nvim-lsp-installer")
 	use("jose-elias-alvarez/null-ls.nvim") -- formatters and linters
 	use("glepnir/lspsaga.nvim")
+
+	-- DAP
+	use({ "mfussenegger/nvim-dap-python" })
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
