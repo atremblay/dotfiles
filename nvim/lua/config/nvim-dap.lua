@@ -24,18 +24,6 @@ vim.fn.sign_define("DapBreakpointCondition", { text = "🟠", texthl = "", lineh
 vim.fn.sign_define("DapStopped", { text = "🟢", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapLogPoint", { text = "📂", texthl = "", linehl = "", numhl = "" })
 
-table.insert(require("dap").configurations.python, {
-	type = "python",
-	request = "launch",
-	name = "My custom launch configuration",
-	--program = "${file}",
-	program = "/Users/alexis/workspace/test.py",
-	console = "integratedTerminal",
-	logToFile = true,
-	args = { "a", "b" },
-	pythonPath = "/Users/alexis/miniconda3/envs/workbench/bin/python",
-})
-
 -- :h dap-api
 local opts = { remap = false, silent = true }
 vim.keymap.set("n", "<F1>", "<cmd>lua require'dap'.continue()<CR>", opts)
@@ -125,3 +113,17 @@ dap.adapters.python = function(cb, config)
 		})
 	end
 end
+
+dap.configurations.python = {}
+
+table.insert(require("dap").configurations.python, {
+	type = "python",
+	request = "launch",
+	name = "My custom launch configuration",
+	--program = "${file}",
+	program = "/Users/alexis/workspace/test.py",
+	console = "integratedTerminal",
+	logToFile = true,
+	args = { "a", "b" },
+	pythonPath = "/Users/alexis/miniconda3/envs/workbench/bin/python",
+})
