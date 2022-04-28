@@ -16,9 +16,22 @@ end
 require("luasnip/loaders/from_vscode").lazy_load()
 
 -- find more here: https://www.nerdfonts.com/cheat-sheet
-cmp.setup.cmdline(":", {
+cmp.setup.cmdline("/", {
+	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = "cmdline", keyword_length = 3 },
+		{ name = "buffer" },
+	},
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(":", {
+	mapping = cmp.mapping.preset.cmdline({
+		["<C-k>"] = cmp.mapping.select_prev_item(),
+		["<C-j>"] = cmp.mapping.select_next_item(),
+	}),
+	sources = {
+		{ name = "cmdline" },
+		{ name = "path" },
 	},
 })
 
@@ -80,12 +93,14 @@ cmp.setup({
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
-	--documentation = {
-	--border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-	--},
-	window = { documentation = "native" },
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+	},
 	experimental = {
 		ghost_text = false,
-		native_menu = false,
 	},
+	--view = {
+	--entries = "native",
+	--},
 })

@@ -113,6 +113,7 @@ dap.adapters.python = function(cb, config)
 			},
 		})
 	else
+		print(vim.inspect(config))
 		cb({
 			type = "executable",
 			command = adapter_python_path,
