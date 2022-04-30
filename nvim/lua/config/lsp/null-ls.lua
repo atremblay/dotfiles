@@ -13,15 +13,17 @@ local diagnostics = null_ls.builtins.diagnostics
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 null_ls.setup({
-	debug = false,
+	debug = true,
 	sources = {
 		-- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		formatting.isort,
 		formatting.black.with({
+			command = os.getenv("HOME") .. "/miniconda3/envs/neovim/bin/black",
 			extra_args = { "--fast", "--line-length", "88" },
 		}),
 		formatting.stylua,
 		diagnostics.pylint.with({
+			command = os.getenv("HOME") .. "/miniconda3/envs/neovim/bin/pylint",
 			extra_args = { "--rcfile", "~/.pylintrc", "-d", "C0411" },
 		}),
 	},
