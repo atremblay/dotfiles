@@ -25,12 +25,9 @@ cmp.setup.cmdline("/", {
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
-	mapping = cmp.mapping.preset.cmdline({
-		["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
-	}),
+	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = "cmdline" },
+		{ name = "cmdline", keyword_length = 5 },
 		{ name = "path" },
 	},
 })
