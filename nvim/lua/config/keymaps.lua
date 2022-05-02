@@ -35,12 +35,12 @@ keymap("i", "!", "!<c-g>u", opts)
 keymap("i", "?", "?<c-g>u", opts)
 
 -- Nice remap to move lines around
-keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
-keymap("i", "<C-j>", "<esc>:m .+1<CR>==", opts)
-keymap("i", "<C-k>", "<esc>:m .-2<CR>==", opts)
-keymap("n", "<leader>j", ":m .+1<CR>==", opts)
-keymap("n", "<leader>k", ":m .-2<CR>==", opts)
+--keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
+--keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
+--keymap("i", "<C-j>", "<esc>:m .+1<CR>==", opts)
+--keymap("i", "<C-k>", "<esc>:m .-2<CR>==", opts)
+--keymap("n", "<leader>j", ":m .+1<CR>==", opts)
+--keymap("n", "<leader>k", ":m .-2<CR>==", opts)
 
 -- Mapping to delete in the 'black hole' registry
 keymap("n", "<leader>d", '"_d', opts)
