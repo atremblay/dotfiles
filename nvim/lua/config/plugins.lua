@@ -71,6 +71,7 @@ return packer.startup(function(use)
 	use("kyazdani42/blue-moon")
 	use("sainnhe/sonokai")
 	use("EdenEast/nightfox.nvim")
+	use("rmehri01/onenord.nvim")
 
 	-- Completion
 	use("hrsh7th/cmp-buffer")

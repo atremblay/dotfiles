@@ -1,4 +1,4 @@
-local colorscheme = "nord"
+local colorscheme = "onenord"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
@@ -9,7 +9,7 @@ end
 require("lualine").setup({
 	options = {
 		-- ... your lualine config
-		theme = "nord",
+		theme = colorscheme,
 		-- ... your lualine config
 	},
 })
