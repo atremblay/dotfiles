@@ -1,6 +1,0 @@
---require('lua-config/lsp-config')
---require('lua-config/cmp')
-----require('lua-config/nvim-compe-config')
---require('lua-config/telescope')
---require('lua-config/nvim-commenter-frame-config')
---require('lua-config/gitsigns')
