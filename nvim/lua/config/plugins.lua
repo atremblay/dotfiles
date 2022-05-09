@@ -56,11 +56,11 @@ return packer.startup(function(use)
 	-- Colorscheme
 	use("shaunsingh/nord.nvim")
 	use("cocopon/iceberg.vim")
-	use("ayu-theme/ayu-vim")
+    use("Shatur/neovim-ayu")
 	use("nanotech/jellybeans.vim")
 	use("gruvbox-community/gruvbox")
 	use("drewtempelmeyer/palenight.vim")
-	--use 'edkolev/tmuxline.vim'
+	--use("edkolev/tmuxline.vim")
 	use("aditya-azad/candle-grey")
 	use("chuling/equinusocio-material.vim")
 	use("rakr/vim-two-firewatch")

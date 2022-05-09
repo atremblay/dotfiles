@@ -1,15 +1,3 @@
-local colorscheme = "onenord"
-
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-	vim.notify("colorscheme " .. colorscheme .. " not found!")
-	return
-end
-
-require("lualine").setup({
-	options = {
-		-- ... your lualine config
-		theme = colorscheme,
-		-- ... your lualine config
-	},
-})
+--require("config.colorscheme.ayu")
+require("config.colorscheme.onenord")
+--require("config.colorscheme.gruvbox")
