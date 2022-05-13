@@ -49,29 +49,16 @@ return packer.startup(function(use)
 	use("tpope/vim-commentary")
 	use("tpope/vim-surround")
 	use("rstacruz/vim-closer")
-	use("vimwiki/vimwiki")
 	use("ojroques/vim-oscyank")
 	--use { 'psf/black', branch = 'main' }
 
 	-- Colorscheme
 	use("shaunsingh/nord.nvim")
 	use("cocopon/iceberg.vim")
-    use("Shatur/neovim-ayu")
-	use("nanotech/jellybeans.vim")
-	use("gruvbox-community/gruvbox")
-	use("drewtempelmeyer/palenight.vim")
-	--use("edkolev/tmuxline.vim")
-	use("aditya-azad/candle-grey")
-	use("chuling/equinusocio-material.vim")
-	use("rakr/vim-two-firewatch")
-	use("chuling/ci_dark")
-	use("luochen1990/rainbow")
-	use("habamax/vim-gruvbit")
-	use("sainnhe/edge")
-	use("kyazdani42/blue-moon")
-	use("sainnhe/sonokai")
 	use("EdenEast/nightfox.nvim")
 	use("rmehri01/onenord.nvim")
+	use("Shatur/neovim-ayu")
+	use("nanotech/jellybeans.vim")
 
 	-- Completion
 	use("hrsh7th/cmp-buffer")
@@ -132,7 +119,6 @@ return packer.startup(function(use)
 	use("tpope/vim-projectionist")
 	use("puremourning/vimspector")
 	use("tmhedberg/SimpylFold")
-	use("mattn/calendar-vim")
 	use("scrooloose/nerdcommenter")
 	use("liuchengxu/vim-which-key")
 	use({
@@ -142,6 +128,10 @@ return packer.startup(function(use)
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
+	use({
+		"nvim-neorg/neorg",
+		requires = "nvim-lua/plenary.nvim",
 	})
 
 	-- Automatically set up your configuration after cloning packer.nvim

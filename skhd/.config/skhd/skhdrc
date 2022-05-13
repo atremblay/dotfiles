@@ -111,6 +111,15 @@ ctrl + alt - f : yabai -m space --layout float
 ctrl + alt - s : yabai -m space --layout stack
 
 
+ctrl + alt - h : yabai -m window --stack east
+ctrl + alt - j : yabai -m window --stack south
+ctrl + alt - k : yabai -m window --stack north
+ctrl + alt - l : yabai -m window --stack west
+
+# navigate stack
+shift + alt - j : yabai -m window --focus stack.next
+shift + alt - k : yabai -m window --focus stack.prev
+
 # toggle window parent zoom
 alt - b : yabai -m window --toggle zoom-parent
  

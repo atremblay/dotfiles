@@ -114,7 +114,8 @@ M.search_dotfiles = function()
 	require("telescope.builtin").find_files({
 		prompt_title = "< VimRC >",
 		cwd = "~/dotfiles/",
-		hidden = false,
+		hidden = true,
+		search_dirs = { "nvim", "kitty", "tmux", "yabai", "skhd" },
 	})
 end
 
