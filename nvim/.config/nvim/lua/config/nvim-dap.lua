@@ -119,11 +119,8 @@ dap.configurations.python = {}
 table.insert(require("dap").configurations.python, {
 	type = "python",
 	request = "launch",
-	name = "My custom launch configuration",
-	--program = "${file}",
-	program = "/Users/alexis/workspace/test.py",
+	name = "Run this file without argument",
+	program = "${file}",
 	console = "integratedTerminal",
 	logToFile = true,
-	args = { "a", "b" },
-	pythonPath = "/Users/alexis/miniconda3/envs/workbench/bin/python",
 })

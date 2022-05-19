@@ -23,7 +23,7 @@ null_ls.setup({
 		}),
 		formatting.stylua,
 		diagnostics.pylint.with({
-			command = os.getenv("HOME") .. "/miniconda3/envs/neovim/bin/pylint",
+			command = "pylint",
 			extra_args = { "--rcfile", "~/.pylintrc", "-d", "C0411" },
 		}),
 	},

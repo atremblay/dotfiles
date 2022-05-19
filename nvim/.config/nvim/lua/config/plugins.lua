@@ -54,7 +54,6 @@ return packer.startup(function(use)
 
 	-- Colorscheme
 	use("shaunsingh/nord.nvim")
-	use("cocopon/iceberg.vim")
 	use("EdenEast/nightfox.nvim")
 	use("rmehri01/onenord.nvim")
 	use("Shatur/neovim-ayu")
