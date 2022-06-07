@@ -57,6 +57,10 @@ return packer.startup(function(use)
 	use("EdenEast/nightfox.nvim")
 	use("rmehri01/onenord.nvim")
 	use("Shatur/neovim-ayu")
+	use({
+		"catppuccin/nvim",
+		as = "catppuccin",
+	})
 	use("nanotech/jellybeans.vim")
 
 	-- Completion

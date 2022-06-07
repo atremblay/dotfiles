@@ -2,3 +2,4 @@
 require("config.colorscheme.onenord")
 --require("config.colorscheme.nightfox")
 --require("config.colorscheme.gruvbox")
+--require("config.colorscheme.catppuccin")
