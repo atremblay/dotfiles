@@ -1,8 +1,7 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
 -- shorthand
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 -- remap space as leader key
 --keymap("", "<Space>", "<Nop>", opts)

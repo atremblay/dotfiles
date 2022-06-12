@@ -102,6 +102,7 @@ return packer.startup(function(use)
 		run = ":TSUpdate",
 	})
 	use({ "nvim-treesitter/nvim-treesitter-textobjects" }) -- More text motions
+	use("nvim-treesitter/nvim-treesitter-context")
 
 	-- nvim tree
 	use({
