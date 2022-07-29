@@ -6,10 +6,6 @@ right_format = """$cmd_duration$conda$hostname $time"""
 # Inserts a blank line between shell prompts
 add_newline = true
 
-
-[conda]
-format = "[$symbol$environment](dimmed green) "
-
 [hostname]
 ssh_only = false
 format = "[$ssh_symbol](bold blue)[$hostname]()"
@@ -46,7 +42,74 @@ time_format = "%T"
 utc_time_offset = "-5"
 time_range = "10:00:00-14:00:00"
 
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+format = "[$symbol$environment](dimmed green) "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
 [python]
 symbol = " "
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
+[spack]
+symbol = "🅢 "
+
+[rust]
+symbol = " "
