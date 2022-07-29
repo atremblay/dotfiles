@@ -1,22 +1,27 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
-#format = "${custom}$all"
 format = """
-[╭─ ](#585858) ${custom}$all[╰─](#585858)$character
-"""
-
-right_format = """$python$cmd_duration$conda$hostname $time"""
+[╭─ ](#585858)${custom}$all$fill$python$cmd_duration$conda$hostname $time
+[╰─](#585858)$character"""
 
 # Inserts a blank line between shell prompts
 add_newline = true
+
+[line_break]
+disabled = true
 
 [character]
 success_symbol = "[❯](bold green)"
 error_symbol = "[✗](bold red)"
 
+[fill]
+symbol = "."
+style = "#585858"
+disabled = false
+
 [hostname]
 ssh_only = false
-format = "[$ssh_symbol](bold blue)[$hostname]()"
+format = "(bold blue)[$hostname]()"
 disabled = false
 
 [username]
@@ -127,3 +132,16 @@ symbol = "🅢 "
 
 [rust]
 symbol = " "
+
+# GIT STATUS
+# conflicted "=" 
+# ahead 	 "⇡" 	
+# behind 	 "⇣" 	
+# diverged 	 "⇕" 	
+# up_to_date "" 	
+# untracked  "?" 
+# stashed 	 "$" 	
+# modified 	 "!" 	
+# staged 	 "+" 	
+# renamed 	 "»" 	
+# deleted 	 "✘"
