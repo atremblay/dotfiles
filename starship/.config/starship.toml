@@ -114,6 +114,8 @@ symbol = " "
 [package]
 symbol = " "
 style = "208"
+format = "[$symbol$version]($style) "
+disabled = true
 
 [python]
 symbol = " "
