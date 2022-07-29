@@ -2,18 +2,17 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 #format = "${custom}$all"
 format = """
-[╭─ ](#585858)${custom}$all[╰─](#585858)$character
+[╭─ ](#585858) ${custom}$all[╰─](#585858)$character
 """
 
-right_format = """$cmd_duration$conda$hostname $time"""
+right_format = """$python$cmd_duration$conda$hostname $time"""
 
 # Inserts a blank line between shell prompts
 add_newline = true
 
 [character]
-success_symbol = "[❯](bold green) "
-error_symbol = "[✗](bold red) "
-
+success_symbol = "[❯](bold green)"
+error_symbol = "[✗](bold red)"
 
 [hostname]
 ssh_only = false
@@ -39,18 +38,16 @@ os = "linux"
 when=true
 style = "bold white" 
 
-
 [cmd_duration]
-format = " [$duration]($style) "
-
+format = "[ $duration]($style) "
+style = "#87875F"
 
 [time]
 disabled = false
-format = ' [$time]($style) '
+format = '[ $time]($style) '
 time_format = "%T"
 utc_time_offset = "-5"
-time_range = "10:00:00-14:00:00"
-
+style = "#5F8787"
 
 [aws]
 symbol = "  "
@@ -70,6 +67,8 @@ symbol = " "
 
 [directory]
 read_only = " "
+style = "cyan"
+truncate_to_repo = false
 
 [docker_context]
 symbol = " "
@@ -83,6 +82,7 @@ symbol = " "
 [git_branch]
 symbol = " "
 format = "[$symbol$branch(:$remote_branch)]($style) "
+style = "purple"
 
 [golang]
 symbol = " "
@@ -113,10 +113,12 @@ symbol = " "
 
 [package]
 symbol = " "
+style = "208"
 
 [python]
 symbol = " "
-format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+format = '[${symbol}${pyenv_prefix}(${version} )[$virtualenv](dimmed green) ]($style)'
+style = "yellow"
 
 [spack]
 symbol = "🅢 "
