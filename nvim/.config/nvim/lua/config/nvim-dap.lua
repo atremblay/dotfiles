@@ -39,6 +39,7 @@ local setup_opts = {
 dap_python.setup(vim.g.python3_host_prog, setup_opts)
 
 dapui.setup()
+dap_python.test_runner = "pytest"
 
 vim.fn.sign_define("DapBreakpoint", { text = "🔴", texthl = "", linehl = "", numhl = "" })
 vim.fn.sign_define("DapBreakpointCondition", { text = "🟠", texthl = "", linehl = "", numhl = "" })
