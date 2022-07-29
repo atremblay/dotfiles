@@ -44,7 +44,7 @@ when=true
 style = "bold white" 
 
 [cmd_duration]
-format = "[ $duration]($style) "
+format = '[ $duration]($style) '
 style = "#87875F"
 
 [time]
@@ -124,7 +124,7 @@ disabled = true
 
 [python]
 symbol = " "
-format = '[${symbol}${pyenv_prefix}(${version})[$virtualenv](dimmed green) ]($style)'
+format = '[${symbol}${pyenv_prefix}(${version}) [$virtualenv](dimmed green) ]($style)'
 style = "yellow"
 
 [spack]

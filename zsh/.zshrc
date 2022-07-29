@@ -7,8 +7,6 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
-source $HOME/.zshaliases
 
 # Terminal supports 256 colors
 export TERM="xterm-256color"
@@ -240,6 +238,8 @@ unset __conda_setup
 # will overwrite aliases provided by oh-my-zsh. This is easier to
 # maintain rather than go play in oh-my-zsh configs
 
+source $ZSH/oh-my-zsh.sh
+source $HOME/.zshaliases
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(starship init zsh)"
