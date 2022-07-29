@@ -7,6 +7,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+source $HOME/.zshaliases
 
 # Terminal supports 256 colors
 export TERM="xterm-256color"
@@ -79,7 +81,6 @@ plugins=(git last-working-dir pip python)
 export PATH=/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
