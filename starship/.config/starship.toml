@@ -1,7 +1,7 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 format = """
-[╭─ ](#585858)${custom}$all$fill$python$cmd_duration$conda$hostname $time
+[╭─ ](#585858)${custom}$all$fill $python$cmd_duration$conda$hostname $time
 [╰─](#585858)$character"""
 
 # Inserts a blank line between shell prompts
