@@ -1,7 +1,7 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 format = """
-[╭─ ](#585858)${custom}$all$fill $python$cmd_duration$conda$hostname $time
+[╭─ ](#585858)${custom}$all$fill $python$cmd_duration$conda$hostname$time
 [╰─](#585858)$character"""
 
 # Inserts a blank line between shell prompts
@@ -21,7 +21,7 @@ disabled = false
 
 [hostname]
 ssh_only = false
-format = "(bold blue)[$hostname]()"
+format = '[\[$hostname\]](blue)'
 disabled = false
 
 [username]
@@ -49,7 +49,7 @@ style = "#87875F"
 
 [time]
 disabled = false
-format = '[ $time]($style) '
+format = '[\[ $time\]]($style)'
 time_format = "%T"
 utc_time_offset = "-5"
 style = "#5F8787"
@@ -65,7 +65,7 @@ symbol = " "
 
 [conda]
 symbol = " "
-format = "[$symbol$environment](dimmed green) "
+format = '[\[$symbol$environment\]](dimmed green)'
 
 [dart]
 symbol = " "
@@ -86,7 +86,7 @@ symbol = " "
 
 [git_branch]
 symbol = " "
-format = "[$symbol$branch(:$remote_branch)]($style) "
+format = "[ $symbol$branch(:$remote_branch)]($style) "
 style = "purple"
 
 [golang]
@@ -124,7 +124,7 @@ disabled = true
 
 [python]
 symbol = " "
-format = '[${symbol}${pyenv_prefix}(${version} )[$virtualenv](dimmed green) ]($style)'
+format = '[${symbol}${pyenv_prefix}(${version})[$virtualenv](dimmed green) ]($style)'
 style = "yellow"
 
 [spack]
