@@ -205,6 +205,8 @@ export PATH=$HOME/miniconda3/bin:$PATH
 #export MYSQL_HOME=/usr/local/Cellar/mysql/5.7.14
 #export PATH=$PATH:$MYSQL_HOME/bin
 
+# Cargo (Rust package manager)
+export PATH=$PATH:$HOME/.cargo/bin
 # cuda
 export CUDA_HOME=/usr/local/cuda
 export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
@@ -236,5 +238,7 @@ unset __conda_setup
 # Keep at the end of the file. Some aliases defined in this file
 # will overwrite aliases provided by oh-my-zsh. This is easier to
 # maintain rather than go play in oh-my-zsh configs
-source $HOME/.zshaliases
+
+export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 eval "$(starship init zsh)"

@@ -86,7 +86,7 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig")
 	use("williamboman/nvim-lsp-installer")
 	use("jose-elias-alvarez/null-ls.nvim") -- formatters and linters
-	use("glepnir/lspsaga.nvim")
+	use({ "glepnir/lspsaga.nvim", branch = "main" })
 
 	-- DAP
 	use({ "mfussenegger/nvim-dap-python" })

@@ -16,7 +16,10 @@ null_ls.setup({
 	debug = true,
 	sources = {
 		-- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-		formatting.isort,
+		formatting.isort.with({
+			command = os.getenv("HOME") .. "/miniconda3/envs/neovim/bin/isort",
+			extra_args = { "--sp", os.getenv("HOME") .. "/.isort.cfg" },
+		}),
 		formatting.black.with({
 			command = os.getenv("HOME") .. "/miniconda3/envs/neovim/bin/black",
 			extra_args = { "--fast", "--line-length", "88" },

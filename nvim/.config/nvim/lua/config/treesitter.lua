@@ -53,20 +53,20 @@ configs.setup({
 			enable = true,
 			set_jumps = true, -- whether to set jumps in the jumplist
 			goto_next_start = {
-				-- ["]f"] = "@function.outer",
-				-- ["]]"] = "@class.outer",
+				["]f"] = "@function.outer",
+				["]]"] = "@class.outer",
 			},
 			goto_next_end = {
-				-- ["]e"] = "@function.outer",
-				-- ["]["] = "@class.outer",
+				["]e"] = "@function.outer",
+				["]["] = "@class.outer",
 			},
 			goto_previous_start = {
-				-- ["[f"] = "@function.outer",
-				-- ["[["] = "@class.outer",
+				["[f"] = "@function.outer",
+				["[["] = "@class.outer",
 			},
 			goto_previous_end = {
-				-- ["[e"] = "@function.outer",
-				-- ["[]"] = "@class.outer",
+				["[e"] = "@function.outer",
+				["[]"] = "@class.outer",
 			},
 		},
 	},
