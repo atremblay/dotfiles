@@ -86,7 +86,7 @@ symbol = " "
 
 [git_branch]
 symbol = " "
-format = "[ $symbol$branch(:$remote_branch)]($style) "
+format = "[ $branch(:$remote_branch)]($style) "
 style = "purple"
 
 [golang]

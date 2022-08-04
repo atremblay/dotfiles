@@ -74,6 +74,11 @@ setopt completealiases
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git last-working-dir pip python vi-mode)
 
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+VI_MODE_SET_CURSOR=true
+MODE_INDICATOR="%F{white}+%f"
+INSERT_MODE_INDICATOR="%F{yellow}+%f"
+
 # User configuration
 
 export PATH=/usr/local/bin:$PATH
@@ -143,7 +148,7 @@ bindkey "^[^[[D" backward-word
 
 ## Make zsh behave like vim
 bindkey -v
-export KEYTIMEOUT=1
+export KEYTIMEOUT=15
 
 ## Change cursor shape for different vi modes.
 #function zle-keymap-select {
