@@ -72,7 +72,7 @@ setopt completealiases
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git last-working-dir pip python)
+plugins=(git last-working-dir pip python vi-mode)
 
 # User configuration
 
@@ -142,8 +142,9 @@ bindkey "^[^[[C" forward-word
 bindkey "^[^[[D" backward-word
 
 ## Make zsh behave like vim
-#bindkey -v
-#export KEYTIMEOUT=1
+bindkey -v
+export KEYTIMEOUT=1
+
 ## Change cursor shape for different vi modes.
 #function zle-keymap-select {
   #if [[ ${KEYMAP} == vicmd ]] ||
