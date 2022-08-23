@@ -124,7 +124,7 @@ disabled = true
 
 [python]
 symbol = " "
-format = '[${symbol}${pyenv_prefix}(${version}) [$virtualenv](dimmed green) ]($style)'
+format = '[${symbol}${pyenv_prefix}(${version}) [$virtualenv](dimmed green)]($style)'
 style = "yellow"
 
 [spack]
