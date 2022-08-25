@@ -25,7 +25,7 @@ require("neorg").setup({
 		["core.gtd.helpers"] = {},
 		["core.gtd.queries"] = {},
 		["core.norg.completion"] = {
-			config = { -- Note that this table is optional and doesn't need to be provided
+			config = {
 				engine = "nvim-cmp",
 			},
 		},

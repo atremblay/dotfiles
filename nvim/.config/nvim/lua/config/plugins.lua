@@ -69,7 +69,6 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-nvim-lsp-signature-help")
-	use("saadparwaiz1/cmp_luasnip") -- snippet completion
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
 	use("kdheepak/cmp-latex-symbols")
@@ -78,6 +77,7 @@ return packer.startup(function(use)
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") -- snippet engine
+	use("saadparwaiz1/cmp_luasnip") -- snippet completion
 	use("rafamadriz/friendly-snippets")
 	use("SirVer/ultisnips")
 	use("honza/vim-snippets")
