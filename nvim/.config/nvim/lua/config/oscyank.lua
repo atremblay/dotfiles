@@ -6,6 +6,6 @@ require("osc52").setup({
 	trim = false, -- Trim text before copy
 })
 
-vim.keymap.set("n", "<leader>c", require("osc52").copy_operator, { expr = true })
-vim.keymap.set("n", "<leader>cc", "<leader>c_", { remap = true })
-vim.keymap.set("x", "<leader>c", require("osc52").copy_visual)
+vim.keymap.set("n", "<leader>y", require("osc52").copy_operator, { expr = true })
+vim.keymap.set("n", "<leader>yy", "<leader>c_", { remap = true })
+vim.keymap.set("x", "<leader>y", require("osc52").copy_visual)

@@ -49,7 +49,6 @@ return packer.startup(function(use)
 	use("tpope/vim-commentary")
 	use("tpope/vim-surround")
 	use("rstacruz/vim-closer")
-	--use("ojroques/vim-oscyank")
 	use({ "ojroques/nvim-osc52" })
 
 	-- Colorscheme
