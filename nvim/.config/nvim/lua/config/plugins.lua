@@ -121,7 +121,6 @@ return packer.startup(function(use)
 	use("ryanoasis/vim-devicons")
 	use("vim-test/vim-test")
 	use("tpope/vim-projectionist")
-	use("puremourning/vimspector")
 	use("tmhedberg/SimpylFold")
 	use("scrooloose/nerdcommenter")
 	use("liuchengxu/vim-which-key")
@@ -137,7 +136,10 @@ return packer.startup(function(use)
 		"nvim-neorg/neorg",
 		requires = "nvim-lua/plenary.nvim",
 	})
-
+	use({
+		"danymat/neogen",
+		requires = "nvim-treesitter/nvim-treesitter",
+	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
