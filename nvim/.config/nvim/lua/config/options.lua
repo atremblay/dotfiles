@@ -40,3 +40,6 @@ vim.g.python3_host_prog = os.getenv("HOME") .. "/miniconda3/envs/neovim/bin/pyth
 
 vim.cmd([[set iskeyword+=-]]) -- let - be part of "words"
 --vim.cmd [[ autocmd BufWritePre *.py call black#Black() ]]
+
+local group = vim.api.nvim_create_augroup("neorg", { clear = true })
+vim.api.nvim_create_autocmd("BufEnter", { command = ":set filetype=norg", group = group, pattern = "*.norg" })
