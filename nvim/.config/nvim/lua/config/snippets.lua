@@ -53,6 +53,7 @@ ls.add_snippets("markdown", {
 	),
 	s("//", fmt("\\frac{{{}}}{{{}}} {}", { i(1, "numerator"), i(2, "denominator"), i(0) })),
 	s("part", fmt("\\frac{{partial {}}}{{partial {}}} {}", { i(1, "numerator"), i(2, "denominator"), i(0) })),
+	s("der", fmt("\\frac{{d {}}}{{d {}}} {}", { i(1, "numerator"), i(2, "denominator"), i(0) })),
 	s("lr(", fmt("\\left({}\\right) {}", { i(1), i(0) })),
 	s("lr{", fmt("\\left{{{}\\right}} {}", { i(1), i(0) })),
 })
