@@ -6,4 +6,3 @@ vim.bo.expandtab = true
 --vim.bo.autoindent = true
 vim.bo.smartindent = true
 vim.bo.wrap = true
-vim.wo.wrap = true
