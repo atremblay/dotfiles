@@ -134,6 +134,7 @@ return packer.startup(function(use)
 	use({
 		"nvim-neorg/neorg",
 		requires = "nvim-lua/plenary.nvim",
+		tag = "0.0.12",
 	})
 	use({
 		"danymat/neogen",
