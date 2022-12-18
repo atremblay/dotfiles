@@ -1,4 +1,8 @@
-require("nvim-comment-frame").setup({
+local status_ok, comment = pcall(require, "nvim-comment-frame")
+if not status_ok then
+	return
+end
+comment.setup({
 
 	-- if true, <leader>cf keymap will be disabled
 	disable_default_keymap = false,

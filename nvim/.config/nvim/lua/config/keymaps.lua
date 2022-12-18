@@ -64,11 +64,18 @@ keymap("n", "<C-L>", "<C-W><C-L>", opts)
 keymap("n", "<C-H>", "<C-W><C-H>", opts)
 
 -- Telescope
+local builtin = require("telescope.builtin")
 
-keymap("n", "<leader>f", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts)
+vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
+vim.keymap.set("n", "<leader>rg", builtin.live_grep, opts)
+vim.keymap.set("n", "<C-b>", builtin.buffers, opts)
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
+vim.keymap.set("n", "<leader>ps", function()
+	builtin.grep_string({ search = vim.fn.input("rg > ") })
+end, opts)
+
+--keymap("n", "<leader>f", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts)
 --keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = true }))<cr>", opts)
-keymap("n", "<leader>rg", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<C-b>", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
 
 -- Git
 keymap("n", "]g", "<cmd>Gitsigns next_hunk<cr>", opts)
@@ -83,4 +90,10 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Telescope to vimrc files
-keymap("n", "<leader>vrc", "<cmd>lua require('config/telescope').search_dotfiles()<cr>", opts)
+-- need to leave the call as string because that function is initialized only in after/plugin
+keymap("n", "<leader>vrc", "<cmd>lua require('telescope').search_dotfiles()<cr>", opts)
+
+--keymap("n", "<leader>f", function()
+--local _, _, p_root = vim.fn.expand("%:p"):find(string.format("(%s", os.getenv("HOME")) .. "/workspace/[^/]+/)")
+--require("telescope.builtin").find_files({ cwd = p_root })
+--end)

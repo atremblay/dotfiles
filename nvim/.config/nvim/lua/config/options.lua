@@ -2,12 +2,15 @@
 local o = vim.opt
 
 -- NVIM OPTIONS
+o.guicursor = ""
+o.hlsearch = false
+o.incsearch = true
 o.backup = false -- creates a backup file
 o.fileencoding = "utf-8" -- encoding yup
 o.completeopt = {
-	"menu",
-	"menuone", -- menuone: popup menu even when only one match
-	"noselect", -- noselect: force user to select from menu
+    "menu",
+    "menuone", -- menuone: popup menu even when only one match
+    "noselect", -- noselect: force user to select from menu
 }
 o.clipboard = "unnamedplus" -- allows nvim to access sysyem clipboard
 o.relativenumber = true -- show relative line numbers
@@ -35,6 +38,7 @@ o.updatetime = 300 -- faster completion (4000ms default)
 o.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 o.scrolloff = 10 -- have a few lines before reaching edge (amazing)
 o.sidescrolloff = 10 -- same for sidescroll
+o.signcolumn = "yes"
 
 vim.g.python3_host_prog = os.getenv("HOME") .. "/miniconda3/envs/neovim/bin/python"
 
