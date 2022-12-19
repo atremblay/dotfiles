@@ -39,5 +39,11 @@ require("rose-pine").setup({
     },
 })
 
+require("lualine").setup({
+    options = {
+        --- @usage 'rose-pine' | 'rose-pine-alt'
+        theme = "rose-pine",
+    },
+})
 -- set colorscheme after options
 vim.cmd("colorscheme rose-pine")
