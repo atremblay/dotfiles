@@ -1,79 +1,49 @@
 require("catppuccin").setup({
-	transparent_background = false,
-	term_colors = false,
-	styles = {
-		comments = "italic",
-		conditionals = "italic",
-		loops = "NONE",
-		functions = "NONE",
-		keywords = "NONE",
-		strings = "NONE",
-		variables = "NONE",
-		numbers = "NONE",
-		booleans = "NONE",
-		properties = "NONE",
-		types = "NONE",
-		operators = "NONE",
-	},
-	integrations = {
-		treesitter = true,
-		native_lsp = {
-			enabled = true,
-			virtual_text = {
-				errors = "italic",
-				hints = "italic",
-				warnings = "italic",
-				information = "italic",
-			},
-			underlines = {
-				errors = "underline",
-				hints = "underline",
-				warnings = "underline",
-				information = "underline",
-			},
-		},
-		lsp_trouble = false,
-		cmp = true,
-		lsp_saga = false,
-		gitgutter = false,
-		gitsigns = true,
-		telescope = true,
-		nvimtree = {
-			enabled = true,
-			show_root = false,
-			transparent_panel = false,
-		},
-		neotree = {
-			enabled = false,
-			show_root = false,
-			transparent_panel = false,
-		},
-		which_key = false,
-		indent_blankline = {
-			enabled = true,
-			colored_indent_levels = false,
-		},
-		dashboard = true,
-		neogit = false,
-		vim_sneak = false,
-		fern = false,
-		barbar = false,
-		bufferline = true,
-		markdown = true,
-		lightspeed = false,
-		ts_rainbow = false,
-		hop = false,
-		notify = true,
-		telekasten = true,
-		symbols_outline = true,
-	},
+    flavour = "frappe", -- latte, frappe, macchiato, mocha
+    background = { -- :h background
+        light = "latte",
+        dark = "frappe",
+    },
+    transparent_background = false,
+    term_colors = false,
+    dim_inactive = {
+        enabled = false,
+        shade = "dark",
+        percentage = 0.15,
+    },
+    no_italic = false, -- Force no italic
+    no_bold = false, -- Force no bold
+    styles = {
+        comments = { "italic" },
+        conditionals = { "italic" },
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
+    },
+    color_overrides = {},
+    custom_highlights = {},
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        telescope = true,
+        notify = false,
+        mini = false,
+        -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+    },
 })
 
 require("lualine").setup({
-	options = {
-		theme = "catppuccin",
-	},
+    options = {
+        theme = "catppuccin",
+    },
 })
 
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 vim.cmd([[colorscheme catppuccin]])

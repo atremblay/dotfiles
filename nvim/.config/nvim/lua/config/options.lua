@@ -2,7 +2,6 @@
 local o = vim.opt
 
 -- NVIM OPTIONS
-o.guicursor = ""
 o.hlsearch = false
 o.incsearch = true
 o.backup = false -- creates a backup file
