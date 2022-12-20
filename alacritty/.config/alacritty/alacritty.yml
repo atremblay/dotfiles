@@ -227,7 +227,7 @@ colors:
      foreground: '#EBCB8B'
      background: '#4C566A'
 
-    bar:
+    colors.footer_bar:
      background: '#434C5E'
      foreground: '#88C0D0'
 

@@ -155,6 +155,9 @@ return packer.startup(function(use)
 		requires = "nvim-treesitter/nvim-treesitter",
 	})
 	use("mbbill/undotree")
+
+	-- Quality of life
+	use("karb94/neoscroll.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

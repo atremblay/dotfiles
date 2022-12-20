@@ -5,4 +5,4 @@ vim.bo.expandtab = true
 --vim.bo.textwidth = 120
 --vim.bo.autoindent = true
 vim.bo.smartindent = true
-vim.bo.wrap = true
+vim.wo.wrap = true
