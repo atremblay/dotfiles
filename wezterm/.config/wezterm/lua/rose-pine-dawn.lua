@@ -1,0 +1,1 @@
+/Users/alexis/dotfiles/wezterm/.config/wezterm/themes/rosepine/lua/rose-pine-dawn.lua

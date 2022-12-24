@@ -65,6 +65,7 @@ return packer.startup(function(use)
         "rose-pine/neovim",
         as = "rose-pine",
     })
+    use("yorickpeterse/vim-paper")
 
     -- Completion
     use("kdheepak/cmp-latex-symbols")
@@ -130,37 +131,37 @@ return packer.startup(function(use)
     use("lewis6991/gitsigns.nvim")
     use("tpope/vim-fugitive")
 
-	-- Utils
-	use("Xuyuanp/nerdtree-git-plugin")
-	use("ryanoasis/vim-devicons")
-	use("vim-test/vim-test")
-	use("tpope/vim-projectionist")
-	use("tmhedberg/SimpylFold")
-	use("scrooloose/nerdcommenter")
-	use("liuchengxu/vim-which-key")
-	use({
-		"stsewd/isort.nvim",
-		run = ":UpdateRemoteuseins",
-	})
-	use({
-		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-	})
-	use({
-		"nvim-neorg/neorg",
-		requires = "nvim-lua/plenary.nvim",
-	})
-	use({
-		"danymat/neogen",
-		requires = "nvim-treesitter/nvim-treesitter",
-	})
-	use("mbbill/undotree")
+    -- Utils
+    use("Xuyuanp/nerdtree-git-plugin")
+    use("ryanoasis/vim-devicons")
+    use("vim-test/vim-test")
+    use("tpope/vim-projectionist")
+    use("tmhedberg/SimpylFold")
+    use("scrooloose/nerdcommenter")
+    use("liuchengxu/vim-which-key")
+    use({
+        "stsewd/isort.nvim",
+        run = ":UpdateRemoteuseins",
+    })
+    use({
+        "nvim-lualine/lualine.nvim",
+        requires = { "kyazdani42/nvim-web-devicons", opt = true },
+    })
+    use({
+        "nvim-neorg/neorg",
+        requires = "nvim-lua/plenary.nvim",
+    })
+    use({
+        "danymat/neogen",
+        requires = "nvim-treesitter/nvim-treesitter",
+    })
+    use("mbbill/undotree")
 
-	-- Quality of life
-	use("karb94/neoscroll.nvim")
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if PACKER_BOOTSTRAP then
-		require("packer").sync()
-	end
+    -- Quality of life
+    use("karb94/neoscroll.nvim")
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if PACKER_BOOTSTRAP then
+        require("packer").sync()
+    end
 end)
