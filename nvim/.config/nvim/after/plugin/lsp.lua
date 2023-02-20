@@ -39,3 +39,9 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true,
 })
+
+-- This needs to be setup after the LSP
+require("mason-nvim-dap").setup({
+    automatic_setup = true,
+})
+require("mason-nvim-dap").setup_handlers({})
