@@ -49,7 +49,7 @@ return packer.startup(function(use)
     use("tpope/vim-commentary")
     use("tpope/vim-surround")
     use("rstacruz/vim-closer")
-    use({ "ojroques/nvim-osc52" })
+    use("ojroques/nvim-osc52")
 
     -- Colorscheme
     use("shaunsingh/nord.nvim")
@@ -104,7 +104,13 @@ return packer.startup(function(use)
     --use({ "glepnir/lspsaga.nvim", branch = "main" })
 
     -- DAP
-    use({ "mfussenegger/nvim-dap-python" })
+    use({
+        "jay-babu/mason-nvim-dap.nvim",
+        requires = {
+            "williamboman/mason.nvim",
+            "mfussenegger/nvim-dap",
+        },
+    })
     use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 
     -- Telescope
