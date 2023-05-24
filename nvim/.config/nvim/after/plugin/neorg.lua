@@ -6,7 +6,7 @@ require("neorg").setup({
                 default_keybinds = true,
             },
         },
-        ["core.norg.dirman"] = {
+        ["core.dirman"] = {
             config = {
                 workspaces = {
                     work = "~/Documents/notes/work",
@@ -15,7 +15,7 @@ require("neorg").setup({
                 },
             },
         },
-        ["core.norg.concealer"] = {},
+        ["core.concealer"] = {},
         --["core.gtd.base"] = {
         --config = {
         --workspace = "gtd",
@@ -24,7 +24,7 @@ require("neorg").setup({
         --["core.gtd.ui"] = {},
         --["core.gtd.helpers"] = {},
         --["core.gtd.queries"] = {},
-        ["core.norg.completion"] = {
+        ["core.completion"] = {
             config = {
                 engine = "nvim-cmp",
             },
