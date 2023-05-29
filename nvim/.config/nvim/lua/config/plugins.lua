@@ -138,6 +138,8 @@ return packer.startup(function(use)
     use("tpope/vim-fugitive")
 
     -- Utils
+    use("lukas-reineke/indent-blankline.nvim")
+    use("norcalli/nvim-colorizer.lua")
     use("Xuyuanp/nerdtree-git-plugin")
     use("ryanoasis/vim-devicons")
     use("vim-test/vim-test")
