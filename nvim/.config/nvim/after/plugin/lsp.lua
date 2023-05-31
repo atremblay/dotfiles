@@ -68,8 +68,9 @@ vim.diagnostic.config({
 })
 
 -- This needs to be setup after the LSP
+require("mason").setup()
 require("mason-nvim-dap").setup({
     automatic_setup = true,
     ensure_installed = { "python" },
-    handlers = nil,
+    handlers = {},
 })
