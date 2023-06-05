@@ -12,6 +12,20 @@ lsp.ensure_installed({
 
 lsp.nvim_workspace()
 
+require("lspconfig").pyright.setup({
+    settings = {
+        python = {
+            analysis = {
+                typeCheckingMode = "off",
+                reportUnknownArgumentType = "off",
+                --reportOptionalMemberAccess=false,
+                --reportUnknownMemberType=false,
+                --reportOptionalMemberAccess=false,
+            },
+        },
+    },
+})
+
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, noremap = true, remap = false, silent = true }
 
@@ -34,13 +48,29 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
 end)
 
+lsp.configure("pyright", {
+    settings = {
+        python = {
+            analysis = {
+                typeCheckingMode = "off",
+                reportUnknownArgumentType = "off",
+                --reportOptionalMemberAccess=false,
+                --reportUnknownMemberType=false,
+                --reportOptionalMemberAccess=false,
+            },
+        },
+    },
+})
 lsp.setup()
+
 vim.diagnostic.config({
     virtual_text = true,
 })
 
 -- This needs to be setup after the LSP
+require("mason").setup()
 require("mason-nvim-dap").setup({
     automatic_setup = true,
+    ensure_installed = { "python" },
+    handlers = {},
 })
-require("mason-nvim-dap").setup_handlers({})
