@@ -79,16 +79,16 @@ cmp.setup({
         }),
     },
     sources = {
-        { name = "nvim_lsp" },
-        { name = "nvim_lua" },
         { name = "luasnip" },
         { name = "ultisnips" },
+        { name = "nvim_lsp" },
+        { name = "nvim_lua" },
         { name = "buffer", keyword_length = 5 },
         { name = "path" },
         { name = "nvim_lsp_signature_help" },
         { name = "neorg" },
     },
-    confirm_opts = {
+    confirm = {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false,
     },
