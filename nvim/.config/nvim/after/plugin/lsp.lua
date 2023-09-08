@@ -8,6 +8,7 @@ lsp.ensure_installed({
     "eslint",
     "pyright",
     "rust_analyzer",
+    "ruff_lsp",
 })
 
 lsp.nvim_workspace()

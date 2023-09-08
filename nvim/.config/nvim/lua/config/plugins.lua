@@ -65,7 +65,6 @@ return packer.startup(function(use)
         "rose-pine/neovim",
         as = "rose-pine",
     })
-    use("yorickpeterse/vim-paper")
 
     -- Completion
     use("kdheepak/cmp-latex-symbols")
