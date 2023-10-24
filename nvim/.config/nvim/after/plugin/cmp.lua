@@ -52,9 +52,17 @@ cmp.setup({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
         }),
-        -- Accept currently selected item. If none selected, `select` first item.
-        -- Set `select` to `false` to only confirm explicitly selected items.
-        --["<CR>"] = cmp.mapping.confirm({ select = false }),
+        ["<CR>"] = cmp.mapping({
+            i = function(fallback)
+                if cmp.visible() and cmp.get_active_entry() then
+                    cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+                else
+                    fallback()
+                end
+            end,
+            s = cmp.mapping.confirm({ select = true }),
+            c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+        }),
     },
     formatting = {
         fields = { "abbr", "kind", "menu" },
@@ -83,14 +91,14 @@ cmp.setup({
         { name = "ultisnips" },
         { name = "nvim_lsp" },
         { name = "nvim_lua" },
-        { name = "buffer", keyword_length = 5 },
+        { name = "buffer",                 keyword_length = 5 },
         { name = "path" },
         { name = "nvim_lsp_signature_help" },
         { name = "neorg" },
     },
     confirm = {
         behavior = cmp.ConfirmBehavior.Replace,
-        select = false,
+        select = true,
     },
     window = {
         completion = cmp.config.window.bordered(),

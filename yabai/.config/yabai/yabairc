@@ -1,7 +1,7 @@
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
-yabai -m config split_ratio 0.4
+yabai -m config split_ratio 0.5
 
 # Make default space layout to bsp
 yabai -m config layout bsp
