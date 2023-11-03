@@ -65,6 +65,7 @@ return packer.startup(function(use)
         "rose-pine/neovim",
         as = "rose-pine",
     })
+    use("sam4llis/nvim-tundra")
 
     -- Completion
     use("kdheepak/cmp-latex-symbols")
@@ -154,10 +155,10 @@ return packer.startup(function(use)
         "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
     })
-    use({
-        "nvim-neorg/neorg",
-        requires = "nvim-lua/plenary.nvim",
-    })
+    --use({
+    --"nvim-neorg/neorg",
+    --requires = "nvim-lua/plenary.nvim",
+    --})
     use({
         "danymat/neogen",
         requires = "nvim-treesitter/nvim-treesitter",

@@ -54,7 +54,7 @@ style = "#87875F"
 
 [time]
 disabled = false
-format = '[\[ $time\]]($style)'
+format = '[\[$time\]]($style)'
 time_format = "%T"
 utc_time_offset = "-5"
 style = "#5F8787"
