@@ -252,3 +252,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
