@@ -5,7 +5,6 @@ local keymap = vim.keymap.set
 
 -- remap space as leader key
 --keymap("", "<Space>", "<Nop>", opts)
---vim.g.mapleader = " "
 --vim.g.maplocalleader = " "
 
 -- Modes:
@@ -50,9 +49,6 @@ keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("n", "<leader>d", '"_d', opts)
 keymap("x", "<leader>d", '"_d', opts)
 
--- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
-
 -- Formatter
 keymap("n", "<leader>p", ":Format<cr>", opts)
 
@@ -71,12 +67,12 @@ keymap("n", "<C-H>", "<C-W><C-H>", opts)
 -- Telescope
 local builtin = require("telescope.builtin")
 
-vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
+vim.keymap.set("n", "<leader>f", builtin.find_files, opts)
 vim.keymap.set("n", "<leader>rg", builtin.live_grep, opts)
 vim.keymap.set("n", "<C-b>", builtin.buffers, opts)
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
 vim.keymap.set("n", "<leader>ps", function()
-    builtin.grep_string({ search = vim.fn.input("rg > ") })
+  builtin.grep_string({ search = vim.fn.input("rg > ") })
 end, opts)
 
 --keymap("n", "<leader>f", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts)
@@ -93,10 +89,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- stop yanking on paste in visual mode
 keymap("v", "p", '"_dP', opts)
-
--- Telescope to vimrc files
--- need to leave the call as string because that function is initialized only in after/plugin
-keymap("n", "<leader>vrc", "<cmd>lua require('telescope').search_dotfiles()<cr>", opts)
 
 --keymap("n", "<leader>f", function()
 --local _, _, p_root = vim.fn.expand("%:p"):find(string.format("(%s", os.getenv("HOME")) .. "/workspace/[^/]+/)")

@@ -1,4 +1,7 @@
 -- shorthand
+
+vim.g.mapleader = "\\"
+
 local o = vim.opt
 
 -- NVIM OPTIONS
@@ -7,9 +10,9 @@ o.incsearch = true
 o.backup = false -- creates a backup file
 o.fileencoding = "utf-8" -- encoding yup
 o.completeopt = {
-    "menu",
-    "menuone", -- menuone: popup menu even when only one match
-    "noselect", -- noselect: force user to select from menu
+  "menu",
+  "menuone", -- menuone: popup menu even when only one match
+  "noselect", -- noselect: force user to select from menu
 }
 o.clipboard = "unnamedplus" -- allows nvim to access sysyem clipboard
 o.relativenumber = true -- show relative line numbers
@@ -42,7 +45,3 @@ o.signcolumn = "yes"
 vim.g.python3_host_prog = os.getenv("HOME") .. "/miniconda3/envs/neovim/bin/python"
 
 vim.cmd([[set iskeyword+=-]]) -- let - be part of "words"
---vim.cmd [[ autocmd BufWritePre *.py call black#Black() ]]
-
-local group = vim.api.nvim_create_augroup("neorg", { clear = true })
-vim.api.nvim_create_autocmd("BufEnter", { command = ":set filetype=norg", group = group, pattern = "*.norg" })
