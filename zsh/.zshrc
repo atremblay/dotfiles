@@ -265,3 +265,4 @@ if [ $? -eq 0 ]; then
 fi
 unset __ng_setup
 
+export PATH=$PATH:/Users/alexis/.spicetify
