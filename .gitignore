@@ -1,3 +1,7 @@
 nvim/.netrwhist
 nvim/autoload/plugged
 nvim/.config/nvim/plugin/
+nvim/.config/nvim/lazy-lock.json
+nvim/.config/nvim/lazyvim.json
+nvim/.config/nvim/lua/plugins/lazy-git.lua
+
