@@ -96,6 +96,24 @@ return {
       -- LSP Server Settings
       ---@type lspconfig.options
       servers = {
+        pyright = {
+          settings = {
+            analysis = {
+              reportMissingImports = false,
+              reportUnusedImport = false,
+              reportUnnecessaryImports = false,
+              typeCheckingMode = "basic",
+            },
+            python = {
+              analysis = {
+                reportMissingImports = false,
+                reportUnusedImport = false,
+                reportUnnecessaryImports = false,
+                typeCheckingMode = "basic",
+              },
+            },
+          },
+        },
         lua_ls = {
           -- mason = false, -- set to false if you don't want this server to be installed with mason
           -- Use this to add any additional keymaps
@@ -139,6 +157,23 @@ return {
         -- end,
         -- Specify * to use this function as a fallback for any server
         -- ["*"] = function(server, opts) end,
+        --pyright = function(_, opts)
+        ----print(vim.inspect(server))
+        --local nvim_lsp = require("lspconfig")
+        --nvim_lsp.pyright.setup(opts)
+
+        --LazyVim.lsp.on_attach(function(client, _)
+        ---- Disable hover in favor of Pyright
+        --client.server_capabilities.documentFormattingProvider = false
+        ----print(vim.inspect(client.server_capabilities))
+        --end, pyright)
+        --end,
+        --ruff = function(_, opts)
+        --LazyVim.lsp.on_attach(function(client, _)
+        ---- Disable hover in favor of Pyright
+        ----print(vim.inspect(client.server_capabilities))
+        --end, ruff)
+        --end,
       },
     }
   end,
