@@ -127,7 +127,7 @@ alt - b : yabai -m window --toggle zoom-parent
 alt - f : yabai -m window --toggle float;yabai -m window --grid 8:8:1:1:6:6 
  
 # toggle window native fullscreen
-shift + alt - f : yabai -m window --toggle native-fullscreen
+shift + alt - f : yabai -m window --toggle zoom-fullscreen
 
 # rotate the windows in the current space
 alt - r : yabai -m space --rotate 90
