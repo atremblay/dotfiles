@@ -59,10 +59,10 @@ keymap("n", "<A-C-h>", ":vertical resize -3<CR>", opts)
 keymap("n", "<A-C-l>", ":vertical resize +3<CR>", opts)
 
 -- Split navigation
-keymap("n", "<C-J>", "<C-W><C-J>", opts)
-keymap("n", "<C-K>", "<C-W><C-K>", opts)
-keymap("n", "<C-L>", "<C-W><C-L>", opts)
-keymap("n", "<C-H>", "<C-W><C-H>", opts)
+--keymap("n", "<C-J>", "<C-W><C-J>", opts)
+--keymap("n", "<C-K>", "<C-W><C-K>", opts)
+--keymap("n", "<C-L>", "<C-W><C-L>", opts)
+--keymap("n", "<C-H>", "<C-W><C-H>", opts)
 
 -- Telescope
 local builtin = require("telescope.builtin")
