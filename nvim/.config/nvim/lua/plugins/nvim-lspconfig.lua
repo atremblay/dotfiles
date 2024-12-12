@@ -1,42 +1,34 @@
---local Util = require("lazyvim.util")
---return {
---"neovim/nvim-lspconfig",
---init = function()
---local keys = require("lazyvim.plugins.lsp.keymaps").get()
---keys[#keys + 1] = { "<leader>dk", vim.diagnostic.goto_prev }
---keys[#keys + 1] = { "<leader>dj", vim.diagnostic.goto_next }
---keys[#keys + 1] = { "<leader>rn", vim.lsp.buf.rename }
---keys[#keys + 1] = { "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>" }
---keys[#keys + 1] = { "<leader>ca", vim.lsp.buf.code_action }
---keys[#keys + 1] = { "<leader>dl", "<cmd>Telescope diagnostics<cr>" }
---end,
---event = "LazyFile",
---dependencies = {
---{ "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
---{ "folke/neodev.nvim", opts = {} },
---"mason.nvim",
---"williamboman/mason-lspconfig.nvim",
---},
---}
-
 return {
   "neovim/nvim-lspconfig",
   event = "LazyFile",
   dependencies = {
     "mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
+    { "williamboman/mason-lspconfig.nvim", config = function() end },
   },
-  init = function() end,
-  ---@class PluginLspOpts
   opts = function()
     local keys = require("lazyvim.plugins.lsp.keymaps").get()
-    keys[#keys + 1] = { "<leader>dk", vim.diagnostic.goto_prev }
-    keys[#keys + 1] = { "<leader>dj", vim.diagnostic.goto_next }
-    keys[#keys + 1] = { "<leader>rn", vim.lsp.buf.rename }
-    keys[#keys + 1] = { "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>" }
-    keys[#keys + 1] = { "<leader>ca", vim.lsp.buf.code_action }
-    keys[#keys + 1] = { "<leader>dl", "<cmd>Telescope diagnostics<cr>" }
-    return {
+    -- stylua: ignore
+    vim.list_extend(keys, {
+      { "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "Goto Definition", has = "definition" },
+      { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References", nowait = true },
+      { "gI", function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end, desc = "Goto Implementation" },
+      { "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, desc = "Goto T[y]pe Definition" },
+      { "<leader>dk", vim.diagnostic.goto_prev },
+      { "<leader>dj", vim.diagnostic.goto_next },
+      { "<leader>rn", vim.lsp.buf.rename },
+      { "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>" },
+      { "<leader>ca", vim.lsp.buf.code_action },
+      { "<leader>dl", "<cmd>Telescope diagnostics<cr>" },
+    })
+
+    --keys[#keys + 1] = { "<leader>dk", vim.diagnostic.goto_prev }
+    --keys[#keys + 1] = { "<leader>dj", vim.diagnostic.goto_next }
+    --keys[#keys + 1] = { "<leader>rn", vim.lsp.buf.rename }
+    --keys[#keys + 1] = { "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>" }
+    --keys[#keys + 1] = { "<leader>ca", vim.lsp.buf.code_action }
+    --keys[#keys + 1] = { "<leader>dl", "<cmd>Telescope diagnostics<cr>" }
+    ---@class PluginLspOpts
+    local ret = {
       -- options for vim.diagnostic.config()
       ---@type vim.diagnostic.Opts
       diagnostics = {
@@ -96,24 +88,6 @@ return {
       -- LSP Server Settings
       ---@type lspconfig.options
       servers = {
-        pyright = {
-          settings = {
-            analysis = {
-              reportMissingImports = false,
-              reportUnusedImport = false,
-              reportUnnecessaryImports = false,
-              typeCheckingMode = "basic",
-            },
-            python = {
-              analysis = {
-                reportMissingImports = false,
-                reportUnusedImport = false,
-                reportUnnecessaryImports = false,
-                typeCheckingMode = "basic",
-              },
-            },
-          },
-        },
         lua_ls = {
           -- mason = false, -- set to false if you don't want this server to be installed with mason
           -- Use this to add any additional keymaps
@@ -157,25 +131,9 @@ return {
         -- end,
         -- Specify * to use this function as a fallback for any server
         -- ["*"] = function(server, opts) end,
-        --pyright = function(_, opts)
-        ----print(vim.inspect(server))
-        --local nvim_lsp = require("lspconfig")
-        --nvim_lsp.pyright.setup(opts)
-
-        --LazyVim.lsp.on_attach(function(client, _)
-        ---- Disable hover in favor of Pyright
-        --client.server_capabilities.documentFormattingProvider = false
-        ----print(vim.inspect(client.server_capabilities))
-        --end, pyright)
-        --end,
-        --ruff = function(_, opts)
-        --LazyVim.lsp.on_attach(function(client, _)
-        ---- Disable hover in favor of Pyright
-        ----print(vim.inspect(client.server_capabilities))
-        --end, ruff)
-        --end,
       },
     }
+    return ret
   end,
   ---@param opts PluginLspOpts
   config = function(_, opts)
@@ -189,8 +147,6 @@ return {
 
     LazyVim.lsp.setup()
     LazyVim.lsp.on_dynamic_capability(require("lazyvim.plugins.lsp.keymaps").on_attach)
-
-    LazyVim.lsp.words.setup(opts.document_highlight)
 
     -- diagnostics signs
     if vim.fn.has("nvim-0.10.0") == 0 then
@@ -212,7 +168,7 @@ return {
             and vim.bo[buffer].buftype == ""
             and not vim.tbl_contains(opts.inlay_hints.exclude, vim.bo[buffer].filetype)
           then
-            LazyVim.toggle.inlay_hints(buffer, true)
+            vim.lsp.inlay_hint.enable(true, { bufnr = buffer })
           end
         end)
       end
@@ -232,7 +188,7 @@ return {
     if type(opts.diagnostics.virtual_text) == "table" and opts.diagnostics.virtual_text.prefix == "icons" then
       opts.diagnostics.virtual_text.prefix = vim.fn.has("nvim-0.10.0") == 0 and "●"
         or function(diagnostic)
-          local icons = require("lazyvim.config").icons.diagnostics
+          local icons = LazyVim.config.icons.diagnostics
           for d, icon in pairs(icons) do
             if diagnostic.severity == vim.diagnostic.severity[d:upper()] then
               return icon
@@ -245,11 +201,13 @@ return {
 
     local servers = opts.servers
     local has_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+    local has_blink, blink = pcall(require, "blink.cmp")
     local capabilities = vim.tbl_deep_extend(
       "force",
       {},
       vim.lsp.protocol.make_client_capabilities(),
       has_cmp and cmp_nvim_lsp.default_capabilities() or {},
+      has_blink and blink.get_lsp_capabilities() or {},
       opts.capabilities or {}
     )
 
@@ -257,6 +215,9 @@ return {
       local server_opts = vim.tbl_deep_extend("force", {
         capabilities = vim.deepcopy(capabilities),
       }, servers[server] or {})
+      if server_opts.enabled == false then
+        return
+      end
 
       if opts.setup[server] then
         if opts.setup[server](server, server_opts) then
