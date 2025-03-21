@@ -210,18 +210,24 @@ export CUDA_HOME=/usr/local/cuda
 export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
 export PATH="$CUDA_HOME/bin:$PATH"
 
+# hugging face
+export HF_DATASETS_CACHE="/data-fast/data3/common/huggingface_datasets"
+export HF_HOME="/data-fast/data3/common/huggingface_datasets"
+#export OLLAMA_MODELS="/data-fast/data3/common/ollama/.ollama/models"
+
 # mssql tools
 export PATH="$PATH:/opt/mssql-tools/bin"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/alexis/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/alexis/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/alexis/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="$HOME/miniconda3/bin:$PATH"
+        export PATH="/home/alexis/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -254,3 +260,4 @@ fi
 unset __ng_setup
 
 export PATH=$PATH:/Users/alexis/.spicetify
+eval "$(uv generate-shell-completion zsh)"
