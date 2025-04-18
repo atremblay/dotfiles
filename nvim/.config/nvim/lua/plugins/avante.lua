@@ -6,9 +6,13 @@ return {
         -- add any opts here
         -- for example
         provider = "openai",
+        cursor_applying_provider = "openai",
+        behaviour = {
+            enable_cursor_planning_mode = false, -- enable cursor planning mode!
+        },
         openai = {
             endpoint = "https://api.openai.com/v1",
-            model = "gpt-4.1-nano",       -- your desired model (or use gpt-4o, etc.)
+            model = "gpt-4o-mini",        -- your desired model (or use gpt-4o, etc.)
             timeout = 30000,              -- Timeout in milliseconds, increase this for reasoning models
             temperature = 1.0,
             max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
