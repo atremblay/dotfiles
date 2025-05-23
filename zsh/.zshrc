@@ -65,7 +65,7 @@ setopt completealiases
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git last-working-dir vi-mode)
+plugins=(git last-working-dir vi-mode docker-compose docker)
 
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 VI_MODE_SET_CURSOR=true
@@ -211,8 +211,8 @@ export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$CUDA_HOME/lib"
 export PATH="$CUDA_HOME/bin:$PATH"
 
 # hugging face
-export HF_DATASETS_CACHE="/data-fast/data3/common/huggingface_datasets"
-export HF_HOME="/data-fast/data3/common/huggingface_datasets"
+#export HF_DATASETS_CACHE="/data-fast/data3/common/huggingface_datasets"
+#export HF_HOME="/data-fast/data3/common/huggingface_datasets"
 #export OLLAMA_MODELS="/data-fast/data3/common/ollama/.ollama/models"
 
 # mssql tools
