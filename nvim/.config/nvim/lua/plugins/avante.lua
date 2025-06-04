@@ -6,57 +6,16 @@ return {
         -- add any opts here
         -- for example
         provider = "openai",
-        cursor_applying_provider = "openai",
-        behaviour = {
-            enable_cursor_planning_mode = false, -- enable cursor planning mode!
-        },
-        openai = {
-            endpoint = "https://api.openai.com/v1",
-            model = "gpt-4o-mini",        -- your desired model (or use gpt-4o, etc.)
-            timeout = 30000,              -- Timeout in milliseconds, increase this for reasoning models
-            temperature = 1.0,
-            max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-            --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
-        },
-        mappings = {
-            diff = {
-                ours = "co",
-                theirs = "ct",
-                all_theirs = "ca",
-                both = "cb",
-                cursor = "cc",
-                next = "]x",
-                prev = "[x",
-            },
-            suggestion = {
-                accept = "<M-l>",
-                next = "<M-]>",
-                prev = "<M-[>",
-                dismiss = "<C-]>",
-            },
-            jump = {
-                next = "]]",
-                prev = "[[",
-            },
-            submit = {
-                normal = "<CR>",
-                insert = "<C-s>",
-            },
-            cancel = {
-                normal = { "<C-c>", "<Esc>", "q" },
-                insert = { "<C-c>" },
-            },
-            sidebar = {
-                apply_all = "A",
-                apply_cursor = "a",
-                retry_user_request = "r",
-                edit_user_request = "e",
-                switch_windows = "<Tab>",
-                reverse_switch_windows = "<S-Tab>",
-                remove_file = "d",
-                add_file = "@",
-                close = { "<Esc>", "q" },
-                close_from_input = nil, -- e.g., { normal = "<Esc>", insert = "<C-d>" }
+        providers = {
+            openai = {
+                endpoint = "https://api.openai.com/v1",
+                model = "gpt-4o",       -- your desired model (or use gpt-4o, etc.)
+                extra_request_body = {
+                    timeout = 30000,    -- Timeout in milliseconds, increase this for reasoning models
+                    temperature = 0.75,
+                    max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
+                    --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
+                },
             },
         },
     },
@@ -69,12 +28,12 @@ return {
         "nvim-lua/plenary.nvim",
         "MunifTanjim/nui.nvim",
         --- The below dependencies are optional,
-        "echasnovski/mini.pick",         -- for file_selector provider mini.pick
+        "echasnovski/mini.pick",     -- for file_selector provider mini.pick
         "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-        "hrsh7th/nvim-cmp",              -- autocompletion for avante commands and mentions
-        "ibhagwan/fzf-lua",              -- for file_selector provider fzf
-        "nvim-tree/nvim-web-devicons",   -- or echasnovski/mini.icons
-        "zbirenbaum/copilot.lua",        -- for providers='copilot'
+        "hrsh7th/nvim-cmp",          -- autocompletion for avante commands and mentions
+        "ibhagwan/fzf-lua",          -- for file_selector provider fzf
+        "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+        "zbirenbaum/copilot.lua",    -- for providers='copilot'
         {
             -- support for image pasting
             "HakonHarnes/img-clip.nvim",
