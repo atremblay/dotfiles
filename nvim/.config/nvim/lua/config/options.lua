@@ -46,6 +46,7 @@ o.scrolloff = 10        -- have a few lines before reaching edge (amazing)
 o.sidescrolloff = 10    -- same for sidescroll
 o.signcolumn = "yes"
 
+
 vim.g.python3_host_prog = os.getenv("HOME") .. "/miniconda3/envs/neovim/bin/python"
 --vim.g.lazyvim_picker = "telescope"
 
