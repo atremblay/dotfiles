@@ -1,3 +1,3 @@
 return {
-  { "ellisonleao/gruvbox.nvim", lazy = false },
+  { "ellisonleao/gruvbox.nvim", lazy = true },
 }

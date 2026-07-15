@@ -90,6 +90,10 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- stop yanking on paste in visual mode
 keymap("v", "p", '"_dP', opts)
 
+-- Toggle comment (native gcc/gc, kept under the old nerdcommenter binding)
+keymap("n", "<leader>c<space>", "gcc", { remap = true, silent = true, desc = "Toggle comment" })
+keymap("x", "<leader>c<space>", "gc", { remap = true, silent = true, desc = "Toggle comment" })
+
 --keymap("n", "<leader>f", function()
 --local _, _, p_root = vim.fn.expand("%:p"):find(string.format("(%s", os.getenv("HOME")) .. "/workspace/[^/]+/)")
 --require("telescope.builtin").find_files({ cwd = p_root })

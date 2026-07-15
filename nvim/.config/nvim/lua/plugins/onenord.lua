@@ -1,6 +1,6 @@
 local colorscheme = "onenord"
 return {
-  { "rmehri01/onenord.nvim", lazy = false },
+  { "rmehri01/onenord.nvim", lazy = false, priority = 1000 },
   {
     "LazyVim/LazyVim",
     opts = {

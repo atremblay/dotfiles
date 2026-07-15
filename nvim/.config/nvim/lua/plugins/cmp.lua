@@ -17,7 +17,7 @@ return {
             "rafamadriz/friendly-snippets", -- useful snippets
             "onsails/lspkind.nvim",         -- vs-code like pictograms
         },
-        enable = false,
+        enabled = false,
         opts = function()
             local cmp_status_ok, cmp = pcall(require, "cmp")
             if not cmp_status_ok then
