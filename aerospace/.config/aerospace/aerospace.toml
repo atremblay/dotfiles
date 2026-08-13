@@ -192,8 +192,11 @@ run = "move-node-to-workspace s"
 
 [[on-window-detected]]
 if.app-id = "com.tinyspeck.slackmacgap"
-run = "move-node-to-workspace d"
+run = "move-node-to-workspace e"
 
+[[on-window-detected]]
+if.app-id = "com.microsoft.teams2"
+run = "move-node-to-workspace t"
 
 [[on-window-detected]]
 if.app-id = "com.microsoft.Outlook"
@@ -205,6 +208,14 @@ if.app-id = "net.battle.app"
 run = "move-node-to-workspace a"
 
 [[on-window-detected]]
-    if.app-id = 'com.apple.systempreferences'
-    run = ['layout floating', 'move-node-to-workspace a'] 
+if.app-id = "com.anthropic.claudefordesktop"
+run = "move-node-to-workspace b"
+
+[[on-window-detected]]
+if.app-id = "md.obsidian"
+run = "move-node-to-workspace v"
+
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = ['layout floating', 'move-node-to-workspace a']
 
